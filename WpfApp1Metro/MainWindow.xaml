@@ -13,6 +13,8 @@
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
             <Button Content="settings" />
+            <TextBlock Text="Theme:" Margin="1" VerticalAlignment="Center" Foreground="LightBlue" />
+            <c1:C1ComboBox x:Name="cmbTheme" IsEditable="False" SelectedItemChanged="cmbTheme_SelectedItemChanged" Width="200" Margin="5" />
             <Button>
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconModern Width="20" Height="20" Kind="App" />
@@ -23,7 +25,7 @@
     </Controls:MetroWindow.RightWindowCommands>
 
 
-    <Grid Height="1049" Width="1912">
+    <Grid   Name="LayoutRoot">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="437*"/>
@@ -31,6 +33,7 @@
 
         </Grid.ColumnDefinitions>
         <c1:C1Menu HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="1000">
+        
         </c1:C1Menu>
 
         <ContentControl prism:RegionManager.RegionName="ContentRegion"  Grid.Column="1" >

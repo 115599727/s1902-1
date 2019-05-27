@@ -1,0 +1,448 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>C1.WPF.Theming.4</name>
+  </assembly>
+  <members>
+    <member name="T:C1.WPF.Theming.C1Theme">
+      <summary>
+            Base class for all the C1Themes.
+            Extends functionality of from Silverlight Toolkit Theme.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.#ctor(System.Reflection.Assembly,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:C1.WPF.Theming.C1Theme" /> class with a
+            Microsoft Silverlight Toolkit theme as base.
+            </summary>
+      <param name="resAssembly">The assembly where both the embedded resource are.</param>
+      <param name="themeName">The name of the theme (the resource names will be calculated using standard nomenclature).</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.#ctor(System.Reflection.Assembly,System.String,System.Reflection.Assembly,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:C1.WPF.Theming.C1Theme" /> class with a
+            Microsoft Silverlight Toolkit theme as base and extending it with a
+            ResourceDictionary containing custom overrides.
+            </summary>
+      <param name="resAssembly">The assembly where the resources are.</param>
+      <param name="themeName">Name of the theme.</param>
+      <param name="assemblyOverrides">The assembly where the override definitions are.</param>
+      <param name="customOverrides">The custom overrides resource name.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.#ctor(System.String,System.Uri,System.Reflection.Assembly,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:C1.WPF.Theming.C1Theme" /> class.
+            </summary>
+      <param name="assemblyName">Name of the assembly.</param>
+      <param name="themeUri">The URI where the theme resource can be found.</param>
+      <param name="assemblyOverrides">The assembly where the override definitions are.</param>
+      <param name="customOverrides">The custom overrides resource name.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.#ctor(System.Reflection.Assembly,System.String,System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:C1.WPF.Theming.C1Theme" /> class with a
+            Microsoft Silverlight Toolkit theme as base.
+            </summary>
+      <param name="assembly">The assembly where the resources are.</param>
+      <param name="overridesUri">The URI to the ResourceDictionary that overrides the generic definitions 
+            for the C1 controls.</param>
+      <param name="baseUri">The URI to a the ResourceDictionary that will be added to the the styles created for 
+            the C1 controls (i.e. any third party control, like the Silverlight basic controls).</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.#ctor(System.Reflection.Assembly,System.String,System.String,System.Reflection.Assembly,System.String)">
+      <summary>
+            This method is used for internal purposes.
+            </summary>
+      <param name="resAssembly">
+      </param>
+      <param name="themeName">
+      </param>
+      <param name="nsLastName">
+      </param>
+      <param name="assemblyOverrides">
+      </param>
+      <param name="customOverrides">
+      </param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.GetCurrentThemeResources(System.Windows.FrameworkElement)">
+      <summary>
+            Gets the resources currently attached to a specified FrameworkElement.
+            </summary>
+      <param name="element">The FrameworkElement from which the current attached 
+            resources needs to be read.</param>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.ApplyTheme(System.Windows.FrameworkElement,System.Windows.ResourceDictionary)">
+      <summary>
+            Sets the current theme resources for a specified FrameworkElement.
+            </summary>
+      <param name="element">The FrameworkElement to which the attached resources are written.</param>
+      <param name="value">The needed ResourceDictionary value.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.ApplyTheme(System.Windows.FrameworkElement,C1.WPF.Theming.Theme)">
+      <summary>
+            Applies the theme for a specified FrameworkElement.
+            </summary>
+      <param name="element">The FrameworkElement to which the Theme will be applied.</param>
+      <param name="theme">The theme.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1Theme.Apply(System.Windows.FrameworkElement)">
+      <summary>
+            Applies this C1Theme to the specified element.
+            </summary>
+      <param name="element">The FrameworkElement to which the C1Theme will be applied.</param>
+    </member>
+    <member name="E:C1.WPF.Theming.C1Theme.LoadingError">
+      <summary>
+            Occurs when an error occurred loading a given theme.
+            </summary>
+      <remarks>
+        <see cref="T:C1.WPF.Theming.C1Theme" /> resources are composed by the original resources and a set of overrides
+            that apply over the original keys. The merge is done in runtime, and that's why errors might occur.
+            </remarks>
+    </member>
+    <member name="P:C1.WPF.Theming.C1Theme.InheritedTypes">
+      <summary>
+            Gets a collection where types that inherit from themed controls can be added to use the theme of its base type.
+            </summary>
+    </member>
+    <member name="T:C1.WPF.Theming.C1ThemeLoadingErrorEventArgs">
+      <summary>
+            Event args used for the <see cref="E:C1.WPF.Theming.C1Theme.LoadingError" /> event.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.Theming.C1ThemeLoadingErrorEventArgs.Errors">
+      <summary>
+            Gets the list of errors.
+            </summary>
+      <value>The errors.</value>
+    </member>
+    <member name="P:C1.WPF.Theming.C1ThemeLoadingErrorEventArgs.Theme">
+      <summary>
+            Gets the <see cref="T:C1.WPF.Theming.C1Theme" />.
+            </summary>
+      <value>The theme.</value>
+    </member>
+    <member name="T:C1.WPF.Theming.C1ThemePart">
+      <summary>
+            Specifies the location of a resource that is part of a <see cref="T:C1.WPF.Theming.C1Theme" />.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.Theming.C1ThemePart.Assembly">
+      <summary>
+            Gets or sets the assembly.
+            </summary>
+      <value>The assembly.</value>
+    </member>
+    <member name="P:C1.WPF.Theming.C1ThemePart.UriSource">
+      <summary>
+            Gets or sets the URI source.
+            </summary>
+      <value>The URI source.</value>
+    </member>
+    <member name="T:C1.WPF.Theming.Primitives.Graph`1">
+      <summary>
+            Represents a graph.  A graph is an arbitrary collection of GraphNode instances.
+            </summary>
+      <typeparam name="T">The type of data stored in the graph's nodes.</typeparam>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddNode(C1.WPF.Theming.Primitives.GraphNode{`0})">
+      <summary>
+            Adds a new GraphNode instance to the Graph
+            </summary>
+      <param name="node">The GraphNode instance to add.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddNode(`0)">
+      <summary>
+            Adds a new value to the graph.
+            </summary>
+      <param name="value">The value to add to the graph</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddDirectedEdge(`0,`0)">
+      <summary>
+            Adds a directed edge from a GraphNode with one value (from) to a GraphNode with another value (to).
+            </summary>
+      <param name="from">The value of the GraphNode from which the directed edge eminates.</param>
+      <param name="to">The value of the GraphNode to which the edge leads.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddDirectedEdge(C1.WPF.Theming.Primitives.GraphNode{`0},C1.WPF.Theming.Primitives.GraphNode{`0})">
+      <summary>
+            Adds a directed edge from one GraphNode (from) to another (to).
+            </summary>
+      <param name="from">The GraphNode from which the directed edge eminates.</param>
+      <param name="to">The GraphNode to which the edge leads.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddDirectedEdge(C1.WPF.Theming.Primitives.GraphNode{`0},C1.WPF.Theming.Primitives.GraphNode{`0},System.Int32)">
+      <summary>
+            Adds a directed edge from one GraphNode (from) to another (to) with an associated cost.
+            </summary>
+      <param name="from">The GraphNode from which the directed edge eminates.</param>
+      <param name="to">The GraphNode to which the edge leads.</param>
+      <param name="cost">The cost of the edge from "from" to "to".</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddDirectedEdge(`0,`0,System.Int32)">
+      <summary>
+            Adds a directed edge from a GraphNode with one value (from) to a GraphNode with another value (to)
+            with an associated cost.
+            </summary>
+      <param name="from">The value of the GraphNode from which the directed edge eminates.</param>
+      <param name="to">The value of the GraphNode to which the edge leads.</param>
+      <param name="cost">The cost of the edge from "from" to "to".</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddUndirectedEdge(`0,`0)">
+      <summary>
+            Adds an undirected edge from a GraphNode with one value (from) to a GraphNode with another value (to).
+            </summary>
+      <param name="from">The value of one of the GraphNodes that is joined by the edge.</param>
+      <param name="to">The value of one of the GraphNodes that is joined by the edge.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddUndirectedEdge(C1.WPF.Theming.Primitives.GraphNode{`0},C1.WPF.Theming.Primitives.GraphNode{`0})">
+      <summary>
+            Adds an undirected edge from one GraphNode to another.
+            </summary>
+      <param name="from">One of the GraphNodes that is joined by the edge.</param>
+      <param name="to">One of the GraphNodes that is joined by the edge.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddUndirectedEdge(C1.WPF.Theming.Primitives.GraphNode{`0},C1.WPF.Theming.Primitives.GraphNode{`0},System.Int32)">
+      <summary>
+            Adds an undirected edge from one GraphNode to another with an associated cost.
+            </summary>
+      <param name="from">One of the GraphNodes that is joined by the edge.</param>
+      <param name="to">One of the GraphNodes that is joined by the edge.</param>
+      <param name="cost">The cost of the undirected edge.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.AddUndirectedEdge(`0,`0,System.Int32)">
+      <summary>
+            Adds an undirected edge from a GraphNode with one value (from) to a GraphNode with another value (to)
+            with an associated cost.
+            </summary>
+      <param name="from">The value of one of the GraphNodes that is joined by the edge.</param>
+      <param name="to">The value of one of the GraphNodes that is joined by the edge.</param>
+      <param name="cost">The cost of the undirected edge.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.Clear">
+      <summary>
+            Clears out the contents of the Graph.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.Contains(`0)">
+      <summary>
+            Returns a Boolean, indicating if a particular value exists within the graph.
+            </summary>
+      <param name="value">The value to search for.</param>
+      <returns>True if the value exist in the graph; false otherwise.</returns>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.Remove(`0)">
+      <summary>
+            Attempts to remove a node from a graph.
+            </summary>
+      <param name="value">The value that is to be removed from the graph.</param>
+      <returns>True if the corresponding node was found, and removed; false if the value was not
+            present in the graph.</returns>
+      <remarks>This method removes the GraphNode instance, and all edges leading to or from the
+            GraphNode.</remarks>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.Graph`1.GetEnumerator">
+      <summary>
+            Returns an enumerator that allows for iterating through the contents of the graph.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.Theming.Primitives.Graph`1.Nodes">
+      <summary>
+            Returns the set of nodes in the graph.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.Theming.Primitives.Graph`1.Count">
+      <summary>
+            Returns the number of vertices in the graph.
+            </summary>
+    </member>
+    <member name="T:C1.WPF.Theming.Primitives.GraphNode`1">
+      <summary>
+            Represents a node in a graph.  A graph node contains some piece of data, along with a set of
+            neighbors.  There can be an optional cost between a graph node and each of its neighbors.
+            </summary>
+      <typeparam name="T">The type of data stored in the graph node.</typeparam>
+    </member>
+    <member name="P:C1.WPF.Theming.Primitives.GraphNode`1.Neighbors">
+      <summary>
+            Returns the set of neighbors for this graph node.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.Theming.Primitives.GraphNode`1.Costs">
+      <summary>
+            Returns the set of costs for the edges eminating from this graph node.
+            The k<sup>th</sup> cost (Cost[k]) represents the cost from the graph node to the node
+            represented by its k<sup>th</sup> neighbor (Neighbors[k]).
+            </summary>
+      <value>
+      </value>
+    </member>
+    <member name="T:C1.WPF.Theming.Primitives.Node`1">
+      <summary>
+            The Node&lt;T&gt; class represents the base concept of a Node for a tree or graph.  It contains
+            a data item of type T, and a list of neighbors.
+            </summary>
+      <typeparam name="T">The type of data contained in the Node.</typeparam>
+      <remarks>None of the classes in the SkmDataStructures2 namespace use the Node class directly;
+            they all derive from this class, adding necessary functionality specific to each data structure.</remarks>
+    </member>
+    <member name="T:C1.WPF.Theming.Primitives.NodeList`1">
+      <summary>
+            Represents a collection of Node&lt;T&gt; instances.
+            </summary>
+      <typeparam name="T">The type of data held in the Node instances referenced by this class.</typeparam>
+    </member>
+    <member name="M:C1.WPF.Theming.Primitives.NodeList`1.FindByValue(`0)">
+      <summary>
+            Searches the NodeList for a Node containing a particular value.
+            </summary>
+      <param name="value">The value to search for.</param>
+      <returns>The Node in the NodeList, if it exists; null otherwise.</returns>
+    </member>
+    <member name="T:C1.WPF.Theming.C1ResourceNotFoundException">
+      <summary>
+            Exception thrown when resource is not found.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.Theming.C1ResourceNotFoundException.Uri">
+      <summary>
+            Gets the uri of the resource that could not be found.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.Theming.C1ResourceNotFoundException.#ctor">
+      <summary>
+            Initializes a new instance of the ResourceNotFoundException class.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.Theming.C1ResourceNotFoundException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the ResourceNotFoundException class.
+            </summary>
+      <param name="message">The exception message.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1ResourceNotFoundException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the ResourceNotFoundException class.
+            </summary>
+      <param name="message">The exception message.</param>
+      <param name="innerException">The inner exception.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1ResourceNotFoundException.#ctor(System.String,System.Uri)">
+      <summary>
+            Initializes a new instance of the ResourceNotFoundException class.
+            </summary>
+      <param name="message">The exception message.</param>
+      <param name="uri">The uri of the resource.</param>
+    </member>
+    <member name="M:C1.WPF.Theming.C1ResourceNotFoundException.#ctor(System.String,System.Uri,System.Exception)">
+      <summary>
+            Initializes a new instance of the ResourceNotFoundException class.
+            </summary>
+      <param name="message">The exception message.</param>
+      <param name="uri">The uri of the resource.</param>
+      <param name="innerException">The inner exception.</param>
+    </member>
+    <member name="T:C1.WPF.Theming.Theme">
+      <summary>
+            Implicitly applies a set of styles to all descendent FrameworkElements.
+            </summary>
+      <QualityBand>Preview</QualityBand>
+    </member>
+    <member name="M:C1.WPF.Theming.Theme.#ctor(System.Reflection.Assembly,System.String)">
+      <summary>
+            Initializes a new instance of the Theme class.
+            </summary>
+      <param name="themeAssembly">
+            Assembly with the embedded resource containing the theme to apply.
+            </param>
+      <param name="themeResourceName">
+            Name of the embedded resource containing the theme to apply.
+            </param>
+    </member>
+    <member name="M:C1.WPF.Theming.Theme.#ctor(System.IO.Stream)">
+      <summary>
+            Initializes a new instance of the Theme class.
+            </summary>
+      <param name="themeResourceStream">
+            A resource stream containing the theme to apply.
+            </param>
+    </member>
+    <member name="T:C1.Silverlight.Theming.InvalidResourceException">
+      <summary>
+            Exception thrown when resource is not found.
+            </summary>
+      <QualityBand>Preview</QualityBand>
+    </member>
+    <member name="P:C1.Silverlight.Theming.InvalidResourceException.Uri">
+      <summary>
+            Gets the uri of the resource that could not be found.
+            </summary>
+    </member>
+    <member name="M:C1.Silverlight.Theming.InvalidResourceException.#ctor">
+      <summary>
+            Initializes a new instance of the InvalidResourceException class.
+            </summary>
+    </member>
+    <member name="M:C1.Silverlight.Theming.InvalidResourceException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the InvalidResourceException class.
+            </summary>
+      <param name="message">The exception message.</param>
+    </member>
+    <member name="M:C1.Silverlight.Theming.InvalidResourceException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the InvalidResourceException class.
+            </summary>
+      <param name="message">The exception message.</param>
+      <param name="innerException">The inner exception.</param>
+    </member>
+    <member name="M:C1.Silverlight.Theming.InvalidResourceException.#ctor(System.String,System.Uri)">
+      <summary>
+            Initializes a new instance of the InvalidResourceException class.
+            </summary>
+      <param name="message">The exception message.</param>
+      <param name="uri">The uri of the resource.</param>
+    </member>
+    <member name="M:C1.Silverlight.Theming.InvalidResourceException.#ctor(System.String,System.Uri,System.Exception)">
+      <summary>
+            Initializes a new instance of the InvalidResourceException class.
+            </summary>
+      <param name="message">The exception message.</param>
+      <param name="uri">The uri of the resource.</param>
+      <param name="innerException">The inner exception.</param>
+    </member>
+    <member name="T:C1.Silverlight.Theming.Properties.Resources">
+      <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.Theming.Properties.Resources.ResourceManager">
+      <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.Theming.Properties.Resources.Culture">
+      <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.Theming.Properties.Resources.InvalidResourceException_UnableToLoadResources">
+      <summary>
+              Looks up a localized string similar to Unable to load resources..
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.Theming.Properties.Resources.ResourceParser_CanOnlyParseXAMLFilesWithResourceDictionaryAsTheRootElement">
+      <summary>
+              Looks up a localized string similar to Cannot parse XAML files which do not have a ResourceDictionary as the root element..
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.Theming.Properties.Resources.Theme_ResourceNotFound">
+      <summary>
+              Looks up a localized string similar to Resource not found at '{0}'..
+            </summary>
+    </member>
+  </members>
+</doc>
