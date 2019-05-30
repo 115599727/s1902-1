@@ -33,12 +33,17 @@ namespace WpfApp1Metro
             this.ShowMaxRestoreButton = false;
             this.ShowIconOnTitleBar = true;
             this.ResizeMode = ResizeMode.NoResize;
+            this.WindowState = WindowState.Maximized;
+            this.IgnoreTaskbarOnMaximize = true;
 
             cmbTheme.ItemsSource = typeof(C1AvailableThemes).GetEnumValues<C1AvailableThemes>();
             cmbTheme.SelectedItem = C1AvailableThemes.Office2016Colorful;
+
+            C1Theme ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2016Colorful();
+            ribbonTheme.Apply(ribbon);
+            ribbonTheme.Apply(this);
+
             //SetTheme();
-            
-            
         }
 
         private void SetTheme()
@@ -52,12 +57,11 @@ namespace WpfApp1Metro
                 // this will aplly theme to everything displayed in adorner, including any C1Window instances
                 C1Theme.ApplyTheme(adornerLayer, theme);
             }
-            
-            
         }
 
         private void cmbTheme_SelectedItemChanged(object sender, PropertyChangedEventArgs<object> e)
         {
+            C1Theme ribbonTheme = null;
             var theme = C1ThemeFactory.GetTheme((C1AvailableThemes)cmbTheme.SelectedItem);
             C1Theme.ApplyTheme(LayoutRoot, theme);
 
@@ -67,8 +71,72 @@ namespace WpfApp1Metro
                 // this will aplly theme to everything displayed in adorner, including any C1Window instances
                 C1Theme.ApplyTheme(adornerLayer, theme);
             }
+            //gallery.CurrentTheme = theme;   
 
-            //gallery.CurrentTheme = theme;
+            SetRibbonTheme(ribbonTheme,(C1AvailableThemes)cmbTheme.SelectedItem);
+
+           // Application.Current.Resources.MergedDictionaries.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(theme.GetNewResourceDictionary());
+            if (ribbonTheme != null)
+            {
+                Application.Current.Resources.MergedDictionaries.Add(ribbonTheme.GetNewResourceDictionary());
+            }
+
+        }
+
+        private void SetRibbonTheme(C1Theme ribbonTheme,C1AvailableThemes selectedThemeItem)
+        {
+           
+            switch (selectedThemeItem)
+            {
+                case C1AvailableThemes.Cosmopolitan:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonCosmopolitan();
+                    break;
+                case C1AvailableThemes.CosmopolitanDark:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonCosmopolitanDark();
+                    break;
+                case C1AvailableThemes.Office2013White:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2013White();
+                    break;
+                case C1AvailableThemes.Office2013LightGray:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2013LightGray();
+                    break;
+                case C1AvailableThemes.Office2013DarkGray:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2013DarkGray();
+                    break;
+                case C1AvailableThemes.Office2016Colorful:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2016Colorful();
+                    break;
+                case C1AvailableThemes.Office2016DarkGray:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2016DarkGray();
+                    break;
+                case C1AvailableThemes.Office2016White:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2016White();
+                    break;
+                case C1AvailableThemes.Office2016Black:
+
+                    ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2016Black();
+                    break;
+                default:
+                    break;
+            }
+            if (ribbonTheme != null)
+            {
+                ribbonTheme.Apply(ribbon);
+                ribbonTheme.Apply(this);
+
+            }
+
+
+
         }
     }
 }

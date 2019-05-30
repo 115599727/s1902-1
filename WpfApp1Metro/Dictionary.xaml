@@ -3,10 +3,23 @@
                     xmlns:local="clr-namespace:WpfApp1Metro"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:String x:Key="OK">
-        OK
+        OK Dictionay
     </sys:String>
 
     <sys:String x:Key="Cancel">
         Cancel
+    </sys:String>
+    <!--菜单项目名称-->
+    <sys:String x:Key="Menum.UrineMeasure">
+        尿检业务
+    </sys:String>
+    <sys:String x:Key="Menum.Qc">
+        质控业务
+    </sys:String>
+    <sys:String x:Key="Menum.Jj">
+        聚焦业务
+    </sys:String>
+    <sys:String x:Key="Menum.Configsetting">
+        选项配置
     </sys:String>
 </ResourceDictionary>
