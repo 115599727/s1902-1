@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Ribbon;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -37,13 +38,27 @@ namespace WpfApp1Metro
             this.IgnoreTaskbarOnMaximize = true;
 
             cmbTheme.ItemsSource = typeof(C1AvailableThemes).GetEnumValues<C1AvailableThemes>();
-            cmbTheme.SelectedItem = C1AvailableThemes.Office2016Colorful;
+            cmbTheme.SelectedItem = C1AvailableThemes.Office2016White;
 
-            C1Theme ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2016Colorful();
+            C1Theme ribbonTheme = new C1.WPF.Theming.Ribbon.C1ThemeRibbonOffice2016White();
+            
             ribbonTheme.Apply(ribbon);
             ribbonTheme.Apply(this);
-
+            this.Loaded += MainWindow_Loaded;
             //SetTheme();
+
+            this.ribbon.Loaded += Ribbon_Loaded;
+        }
+
+        private void Ribbon_Loaded(object sender, RoutedEventArgs e)
+        {
+            ((Grid)VisualTreeHelper.GetChild((DependencyObject)sender, 0)).RowDefinitions[0].Height = new GridLength(0);
+
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            var v=this.Resources.FindName("appbutton");
         }
 
         private void SetTheme()
@@ -81,6 +96,7 @@ namespace WpfApp1Metro
             {
                 Application.Current.Resources.MergedDictionaries.Add(ribbonTheme.GetNewResourceDictionary());
             }
+           // ribbon.ApplicationMenu.Background = this.Background;
 
         }
 
@@ -134,9 +150,9 @@ namespace WpfApp1Metro
                 ribbonTheme.Apply(this);
 
             }
+            
 
 
-
-        }
+    }
     }
 }

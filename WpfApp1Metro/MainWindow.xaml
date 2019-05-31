@@ -11,11 +11,12 @@
     xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon" x:Class="WpfApp1Metro.MainWindow" 
         mc:Ignorable="d"
        
-        Title="MEDICSIDE" Height="1080" Width="1920"> <!--Icon="medicsidei.ico"-->
+        Title="MEDICSIDE" Height="1080" Width="1920">
+    <!--Icon="medicsidei.ico"-->
 
     <Controls:MetroWindow.LeftWindowCommands>
         <Controls:WindowCommands>
-           
+
         </Controls:WindowCommands>
     </Controls:MetroWindow.LeftWindowCommands>
     <Controls:MetroWindow.RightWindowCommands>
@@ -35,64 +36,70 @@
             </Button>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
-   
 
     <Grid   Name="LayoutRoot">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="437*"/>
-            <ColumnDefinition Width="355*"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
 
-        </Grid.ColumnDefinitions>
-        <c1:C1Menu HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="1000">
-            <Button Width="100" Height="100"  >
-                <Image Width="72" Height="72" Source="medicsidei.ico" />
-            </Button>
-            <Button Width="100" Height="100"  Content="{DynamicResource Menum.Qc}"></Button>
-            <Button Width="100" Height="100"  Content="{DynamicResource Menum.Jj}"></Button>
+        </Grid.RowDefinitions>
+        
+        <Ribbon x:Name="ribbon" HorizontalAlignment="Stretch" Margin="0" Panel.ZIndex="10" WindowIconVisibility="Hidden" Grid.Row="0"  >
+            <Ribbon.ApplicationMenu>
 
-            <c1:C1MenuItem Header="Web Site...">
-                <c1:C1MenuItem.Icon>
-                    <Image  Source="medicsidei.ico" />
-                </c1:C1MenuItem.Icon>
-            </c1:C1MenuItem>
-        </c1:C1Menu>
-        <Ribbon x:Name="ribbon" HorizontalAlignment="Stretch" >
-            <ribbon:RibbonTab Header="Home" KeyTip="H" GroupSizeReductionOrder="Theme, Editing, Cells, Number, Alignment, Font, Clipboard">
-                <ribbon:RibbonGroup x:Name="Theme" Margin="0,1" Header="Theme" QuickAccessToolBarId="Theme" >
-                    <ribbon:RibbonComboBox x:Name="ribcmbTheme" IsEnabled="True" SelectionBoxWidth="160"  >
+                <RibbonApplicationMenu KeyTip="F"   SmallImageSource="medicsidei.ico"   >
+                    <RibbonApplicationMenuItem Header="Save" Width="150" ImageSource="medicsidei.ico"  />
+                </RibbonApplicationMenu>
+
+            </Ribbon.ApplicationMenu>
+
+            <ribbon:RibbonTab Header="{DynamicResource Ribbon.HOME}" KeyTip="H" GroupSizeReductionOrder="Theme, Editing, Cells, Number, Alignment, Font, Clipboard">
+                <ribbon:RibbonGroup x:Name="ribStatus" Margin="0,1" Header="{DynamicResource Ribbon.Status}" QuickAccessToolBarId="Theme" >
+                    <!--<ribbon:RibbonComboBox x:Name="ribcmbTheme" IsEnabled="True" SelectionBoxWidth="160"  >
                         <ribbon:RibbonGallery x:Name="themeGallery" MaxColumnCount="1" 
                                               ScrollViewer.VerticalScrollBarVisibility="Hidden">
-                            <ribbon:RibbonGalleryCategory x:Name="themesCategory" ItemsSource="{Binding}" />
-                        </ribbon:RibbonGallery>
-                    </ribbon:RibbonComboBox>
+                            
+                        </ribbon:RibbonGallery></ribbon:RibbonComboBox>
+                     -->
+
+                    <Image Source="medicsidei.ico" />
+                    <Image Source="medicsidei.ico" />
+                    <Image Source="medicsidei.ico" />
                 </ribbon:RibbonGroup>
-                <ribbon:RibbonGroup Header="Clipboard" >
-                    <ribbon:RibbonSplitButton Label="Paste"  ToolTipTitle="Paste (Ctrl+V)" 
+                <ribbon:RibbonGroup Header="{DynamicResource Ribbon.Action}" >
+                    <!--<ribbon:RibbonSplitButton Label="Paste"  ToolTipTitle="Paste (Ctrl+V)" 
                                               ToolTipDescription="Add content on the Clipboard to your document." >
                         <ribbon:RibbonMenuItem Header="Keep Source Formatting (K)"  ToolTipTitle="Keep Source Formatting (K)" />
                         <ribbon:RibbonMenuItem Header="Match Destination Formatting (K)"  ToolTipTitle="Match Destination Formatting (K)" />
                         <ribbon:RibbonMenuItem Header="Paste Special..."/>
-                    </ribbon:RibbonSplitButton>
-                    <ribbon:RibbonButton Label="Cut"  ToolTipTitle="Cut (Ctrl+X)" 
-                                         ToolTipDescription="Remove the selection and put it on the Clipboard so you can paste it somewhere else." />
-                    <ribbon:RibbonSplitButton Label="Copy"  ToolTipTitle="Copy (Ctrl+C)"
-                                         ToolTipDescription="Put a copy of the selection on the Clipboard so you can paste it somewhere else.">
-                        <ribbon:RibbonMenuItem Header="Copy" ImageSource="medicsidei.ico" ToolTipTitle="Cut (Ctrl+C)"
-                                         ToolTipDescription="Put a copy of the selection on the Clipboard so you can paste it somewhere else." />
-                        <ribbon:RibbonMenuItem Header="Copy as Picture..."/>
-                    </ribbon:RibbonSplitButton>
-                    <ribbon:RibbonButton Label="Format Painter" SmallImageSource="medicsidei.ico" ToolTipTitle="Format Painter"
-                                         ToolTipDescription="Like the look of a particular selection? You can apply that look to other content in the document.&#x000A;&#x000A;To get started:&#x000A;1. Select content with the formatting you like&#x000A;2. Click Format Painter&#x000A;3. Select something else to automatically apply the formatting&#x000A;&#x000A;FYI: To apply the formatting in multiple places, double-click Format Painter."
-                                         ToolTipFooterTitle="Tell me more" />
+                    </ribbon:RibbonSplitButton>-->
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
-
-
+            <!--隐藏-->
         </Ribbon>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion"  Grid.Column="1" >
-            
+
+        <ContentControl prism:RegionManager.RegionName="ContentRegion"  Grid.Row="1" >
+
         </ContentControl>
+        <StatusBar Grid.Row="2" >
+
+            <TextBlock Text="stat"/>
+        </StatusBar>
+
     </Grid>
 
 </Controls:MetroWindow>

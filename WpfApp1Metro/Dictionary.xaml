@@ -22,4 +22,10 @@
     <sys:String x:Key="Menum.Configsetting">
         选项配置
     </sys:String>
+    <!--Ribbon名称-->
+
+    <sys:String x:Key="Ribbon.HOME">首页</sys:String>
+    <sys:String x:Key="Ribbon.Status">设备状态</sys:String>
+    <sys:String x:Key="Ribbon.Action">操作项目</sys:String>
+    <sys:String x:Key="Ribbon.Action.SampleRigister">样本登记</sys:String>
 </ResourceDictionary>
