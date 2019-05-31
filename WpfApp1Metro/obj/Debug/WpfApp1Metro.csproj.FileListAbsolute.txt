@@ -193,7 +193,6 @@ D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\MainWindow.baml
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.g.resources
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.Properties.Resources.resources
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csproj.GenerateResource.cache
-D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.exe.licenses
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csproj.CoreCompileInputs.cache
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csproj.CopyComplete
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.exe
@@ -218,3 +217,6 @@ D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\FlyoutLeftView.baml
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\FlyoutLeftView.g.cs
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\C1.WPF.Toolbar.4.dll
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\C1.WPF.Toolbar.4.xml
+D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\Window1.g.cs
+D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\Window1.baml
+D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.exe.licenses

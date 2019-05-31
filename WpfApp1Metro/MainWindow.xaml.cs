@@ -48,6 +48,7 @@ namespace WpfApp1Metro
             //SetTheme();
 
             this.ribbon.Loaded += Ribbon_Loaded;
+            
         }
 
         private void Ribbon_Loaded(object sender, RoutedEventArgs e)
@@ -58,7 +59,7 @@ namespace WpfApp1Metro
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            var v=this.Resources.FindName("appbutton");
+           // var v=this.Resources.FindName("appbutton");
         }
 
         private void SetTheme()
@@ -72,9 +73,10 @@ namespace WpfApp1Metro
                 // this will aplly theme to everything displayed in adorner, including any C1Window instances
                 C1Theme.ApplyTheme(adornerLayer, theme);
             }
+            Ribbon_Loaded(this,null);
         }
 
-        private void cmbTheme_SelectedItemChanged(object sender, PropertyChangedEventArgs<object> e)
+        private void CmbTheme_SelectedItemChanged(object sender, PropertyChangedEventArgs<object> e)
         {
             C1Theme ribbonTheme = null;
             var theme = C1ThemeFactory.GetTheme((C1AvailableThemes)cmbTheme.SelectedItem);
@@ -154,5 +156,12 @@ namespace WpfApp1Metro
 
 
     }
+
+        
+
+        private void CmdExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

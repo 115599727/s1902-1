@@ -8,9 +8,9 @@
         xmlns:local="clr-namespace:WpfApp1Metro"
         xmlns:prism="http://prismlibrary.com/" 
         xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml"
-    xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon" x:Class="WpfApp1Metro.MainWindow" 
+        xmlns:ribbon="clr-namespace:System.Windows.Controls.Ribbon;assembly=System.Windows.Controls.Ribbon" x:Class="WpfApp1Metro.MainWindow" 
         mc:Ignorable="d"
-       
+        
         Title="MEDICSIDE" Height="1080" Width="1920">
     <!--Icon="medicsidei.ico"-->
 
@@ -27,7 +27,7 @@
             <Button Content="{DynamicResource Menum.Jj}"  />
             <Button Content="{DynamicResource Menum.Configsetting}"  />
             <TextBlock Text="Theme:" Margin="1" VerticalAlignment="Center" Foreground="LightBlue" />
-            <c1:C1ComboBox x:Name="cmbTheme" IsEditable="False" SelectedItemChanged="cmbTheme_SelectedItemChanged" Width="200" Margin="5" />
+            <c1:C1ComboBox x:Name="cmbTheme" IsEditable="False" SelectedItemChanged="CmbTheme_SelectedItemChanged" Width="200" Margin="5" />
             <Button>
                 <StackPanel Orientation="Horizontal">
                     <iconPacks:PackIconModern Width="20" Height="20" Kind="App" />
@@ -43,14 +43,26 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="auto" />
-
         </Grid.RowDefinitions>
         
         <Ribbon x:Name="ribbon" HorizontalAlignment="Stretch" Margin="0" Panel.ZIndex="10" WindowIconVisibility="Hidden" Grid.Row="0"  >
             <Ribbon.ApplicationMenu>
 
-                <RibbonApplicationMenu KeyTip="F"   SmallImageSource="medicsidei.ico"   >
-                    <RibbonApplicationMenuItem Header="Save" Width="150" ImageSource="medicsidei.ico"  />
+                <RibbonApplicationMenu KeyTip="F" >
+                    
+                    <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
+                    <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
+                    <RibbonSeparator />
+                    
+                    <RibbonApplicationSplitMenuItem Header="{DynamicResource Ribbon.Menu.Setting}">
+                        <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
+                        <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
+                    </RibbonApplicationSplitMenuItem>
+                    
+                    <RibbonSeparator />
+                    <RibbonApplicationMenuItem x:Name="CmdExit" Click="CmdExit_Click"                                            
+                                               Header="{DynamicResource Ribbon.Menu.Exit}" />
+
                 </RibbonApplicationMenu>
 
             </Ribbon.ApplicationMenu>
@@ -63,7 +75,6 @@
                             
                         </ribbon:RibbonGallery></ribbon:RibbonComboBox>
                      -->
-
                     <Image Source="medicsidei.ico" />
                     <Image Source="medicsidei.ico" />
                     <Image Source="medicsidei.ico" />
@@ -75,7 +86,7 @@
                         <ribbon:RibbonMenuItem Header="Match Destination Formatting (K)"  ToolTipTitle="Match Destination Formatting (K)" />
                         <ribbon:RibbonMenuItem Header="Paste Special..."/>
                     </ribbon:RibbonSplitButton>-->
-                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}" Command=""  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
 
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="medicsidei.ico"/>

@@ -8,7 +8,11 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel>
-        <TextBlock Text="View TEST" FontSize="28" />
-        <TextBox x:Name="textBox"  Height="119" FontSize="25"  Text="{DynamicResource OK}" VerticalAlignment="Top" /></StackPanel>
+            <TextBlock Text="View TEST" FontSize="28" />
+            <TextBox x:Name="textBox"  Height="119" FontSize="25"  Text="{DynamicResource OK}" VerticalAlignment="Top" />
+            <Button  Content="对话框" Click="Button_Click"  />
+
+
+        </StackPanel>
     </Grid>
 </UserControl>
