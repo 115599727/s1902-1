@@ -220,3 +220,8 @@ D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\C1.WPF.Toolbar.4.xml
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\Window1.g.cs
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\Window1.baml
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.exe.licenses
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\log4net.config
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\log4net.dll
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\log4net.xml
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\UriMeasureBussiness.dll
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\UriMeasureBussiness.pdb

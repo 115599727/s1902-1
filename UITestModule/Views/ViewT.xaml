@@ -10,7 +10,7 @@
         <StackPanel>
             <TextBlock Text="View TEST" FontSize="28" />
             <TextBox x:Name="textBox"  Height="119" FontSize="25"  Text="{DynamicResource OK}" VerticalAlignment="Top" />
-            <Button  Content="对话框" Click="Button_Click"  />
+            <Button  Content="对话框" Click="Button_Click" Width="300"  />
 
 
         </StackPanel>

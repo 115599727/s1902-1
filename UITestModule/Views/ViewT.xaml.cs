@@ -1,4 +1,6 @@
-﻿using System;
+﻿using log4net;
+using Medicside.UriMeasure.Bussiness;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,7 @@ namespace UITestModule.Views
     /// </summary>
     public partial class ViewT : UserControl
     {
+        
         public ViewT()
         {
             InitializeComponent();
@@ -27,7 +30,11 @@ namespace UITestModule.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            var Log = PlantForm.Log;
+            Log.Debug("Log MessageBox");
+            Log.Info("Messagebox");
             MessageBox.Show("MessageBox Show!","Caption",MessageBoxButton.YesNo,MessageBoxImage.Information);
+            Log.Warn("messageBox");
         }
     }
 }

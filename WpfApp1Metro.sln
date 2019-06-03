@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1Metro", "WpfApp1Metr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestModule", "UITestModule\UITestModule.csproj", "{56E38D45-1715-40EA-9F53-81C60C37D027}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UriMeasureBussiness", "UriMeasureBussiness\UriMeasureBussiness.csproj", "{BF451939-CB29-4764-9DF6-9DA6CAB5223F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{56E38D45-1715-40EA-9F53-81C60C37D027}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56E38D45-1715-40EA-9F53-81C60C37D027}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56E38D45-1715-40EA-9F53-81C60C37D027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF451939-CB29-4764-9DF6-9DA6CAB5223F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF451939-CB29-4764-9DF6-9DA6CAB5223F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF451939-CB29-4764-9DF6-9DA6CAB5223F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF451939-CB29-4764-9DF6-9DA6CAB5223F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

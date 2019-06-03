@@ -8,6 +8,8 @@ using System.Windows;
 using Prism.Modularity;
 using Prism.Ioc;
 using Prism.Unity;
+using log4net;
+using Medicside.UriMeasure.Bussiness;
 
 namespace WpfApp1Metro
 {
@@ -16,6 +18,13 @@ namespace WpfApp1Metro
     /// </summary>
     public partial class App : PrismApplication
     {
+        public static readonly ILog Log = LogManager.GetLogger("RollingLogFileAppender");
+        public override void Initialize()
+        {
+            base.Initialize();
+            PlantForm.SetLogger(Log);
+            PlantForm.Log.Info("Start UriMeasure");
+        }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
            //this.r

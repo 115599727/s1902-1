@@ -58,6 +58,9 @@
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
     </Reference>
@@ -159,6 +162,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -172,6 +178,10 @@
     <ProjectReference Include="..\UITestModule\UITestModule.csproj">
       <Project>{56e38d45-1715-40ea-9f53-81c60c37d027}</Project>
       <Name>UITestModule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UriMeasureBussiness\UriMeasureBussiness.csproj">
+      <Project>{bf451939-cb29-4764-9df6-9da6cab5223f}</Project>
+      <Name>UriMeasureBussiness</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

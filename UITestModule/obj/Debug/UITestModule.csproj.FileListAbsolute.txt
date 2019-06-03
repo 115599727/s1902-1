@@ -86,3 +86,7 @@ D:\S1902软件项目\Develop\github\UITestModule\obj\Debug\UITestModule.csproj.C
 D:\S1902软件项目\Develop\github\UITestModule\obj\Debug\UITestModule.csproj.CopyComplete
 D:\S1902软件项目\Develop\github\UITestModule\obj\Debug\UITestModule.dll
 D:\S1902软件项目\Develop\github\UITestModule\obj\Debug\UITestModule.pdb
+D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\log4net.dll
+D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\log4net.xml
+D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\UriMeasureBussiness.dll
+D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\UriMeasureBussiness.pdb
