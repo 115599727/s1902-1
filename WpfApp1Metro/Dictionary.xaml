@@ -28,6 +28,7 @@
     <sys:String x:Key="Ribbon.Status">设备状态</sys:String>
     <sys:String x:Key="Ribbon.Action">操作项目</sys:String>
     <sys:String x:Key="Ribbon.Action.SampleRigister">样本登记</sys:String>
+    <sys:String x:Key="Ribbon.Action.ViewT">测试功能</sys:String>
     <sys:String x:Key="Ribbon.Menu.Setting">配置</sys:String>
     <sys:String x:Key="Ribbon.Menu.Exit">退出</sys:String>
 </ResourceDictionary>

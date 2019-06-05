@@ -75,9 +75,9 @@
                             
                         </ribbon:RibbonGallery></ribbon:RibbonComboBox>
                      -->
-                    <Image Source="medicsidei.ico" />
-                    <Image Source="medicsidei.ico" />
-                    <Image Source="medicsidei.ico" />
+                    <Image Source="../medicsidei.ico" />
+                    <Image Source="../medicsidei.ico" />
+                    <Image Source="../medicsidei.ico" />
                 </ribbon:RibbonGroup>
                 <ribbon:RibbonGroup Header="{DynamicResource Ribbon.Action}" >
                     <!--<ribbon:RibbonSplitButton Label="Paste"  ToolTipTitle="Paste (Ctrl+V)" 
@@ -96,7 +96,7 @@
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico"/>
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico"/>
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico"/>
-                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico" Command="{Binding NavigateCommand}" CommandParameter="ViewT"/>
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.ViewT}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico" Command="{Binding NavigateCommand}" CommandParameter="ViewT"/>
 
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>

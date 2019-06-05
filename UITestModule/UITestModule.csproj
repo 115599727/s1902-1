@@ -88,6 +88,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\ViewTViewModel.cs" />
     <Compile Include="Views\ViewT.xaml.cs">
       <DependentUpon>ViewT.xaml</DependentUpon>
     </Compile>

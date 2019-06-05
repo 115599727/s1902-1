@@ -4,11 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:UITestModule.Views"
+              xmlns:prism="http://prismlibrary.com/" 
+             prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel>
             <TextBlock Text="View TEST" FontSize="28" />
+            <TextBlock Text="{Binding DemoText}" FontSize="20" />
             <TextBox x:Name="textBox"  Height="119" FontSize="25"  Text="{DynamicResource OK}" VerticalAlignment="Top" />
             <Button  Content="对话框" Click="Button_Click" Width="300"  />
             <Button  Content="按下" Click="Button_Click" Width="300"  />
