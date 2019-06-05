@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfApp1Metro
+namespace WpfApp1Metro.NewFolder1
 {
     /// <summary>
     /// Window1.xaml 的交互逻辑

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1Metro"
-        xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" x:Class="WpfApp1Metro.Window1"
+        xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" x:Class="WpfApp1Metro.NewFolder1.Window1"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
     <Grid>

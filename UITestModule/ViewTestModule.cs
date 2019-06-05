@@ -12,13 +12,14 @@ namespace UITestModule
     {
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewT));
+            //启动时注册
+            //var regionManager = containerProvider.Resolve<IRegionManager>();
+            //regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewT));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterForNavigation<ViewT>();
         }
     }
 }

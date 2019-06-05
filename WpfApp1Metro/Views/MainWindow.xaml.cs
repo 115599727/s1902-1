@@ -17,7 +17,7 @@ using C1.WPF;
 using C1.WPF.Theming;
 using MahApps.Metro.Controls;
 
-namespace WpfApp1Metro
+namespace WpfApp1Metro.Views
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
