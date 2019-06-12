@@ -1,9 +1,9 @@
-D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csprojAssemblyReference.cache
-D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csproj.CoreCompileInputs.cache
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureBussiness.dll
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureBussiness.pdb
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\log4net.dll
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\log4net.xml
-D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csproj.CopyComplete
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.dll
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.pdb
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csprojAssemblyReference.cache
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csproj.CoreCompileInputs.cache
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csproj.CopyComplete

@@ -1,4 +1,5 @@
 ﻿using Medicside.UriMeasure.Bussiness;
+using Medicside.UriMeasure.Bussiness.Plant;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -27,7 +28,12 @@ namespace WpfApp1Metro.ViewModels
         private void Navigate(string navigatePath)
         {
             if (navigatePath != null)
+            {
+                var parameters = new NavigationParameters();
+                //parameters.add("MenuGroup", this.);
+
                 _regionManager.RequestNavigate("ContentRegion", navigatePath);
+            }
             PlantForm.Log.Info("Navigate " + navigatePath);
         }
 

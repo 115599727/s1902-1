@@ -7,7 +7,7 @@
     <ProjectGuid>{BF451939-CB29-4764-9DF6-9DA6CAB5223F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UriMeasureBussiness</RootNamespace>
+    <RootNamespace>Medicside.UriMeasure.Bussiness</RootNamespace>
     <AssemblyName>UriMeasureBussiness</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -44,12 +44,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="PlantForm.cs" />
+    <Compile Include="Equipment\ChimneyEquipmt.cs" />
+    <Compile Include="Equipment\Equipment.cs" />
+    <Compile Include="Equipment\MorphologyEquipment.cs" />
+    <Compile Include="Equipment\PortNetWork.cs" />
+    <Compile Include="Equipment\PortRS232.cs" />
+    <Compile Include="Equipment\RecyclediskEquipment.cs" />
+    <Compile Include="Equipment\S1902BitMapReader.cs" />
+    <Compile Include="Equipment\StoragediskEquipment.cs" />
+    <Compile Include="Equipment\HandScanner.cs" />
+    <Compile Include="Interface\IBitmapReader.cs" />
+    <Compile Include="Interface\IChimneyMeasure.cs" />
+    <Compile Include="Interface\IMorphplogyMeasure.cs" />
+    <Compile Include="Plant\PlantA.cs" />
+    <Compile Include="Plant\PlantAB.cs" />
+    <Compile Include="Plant\PlantB.cs" />
+    <Compile Include="Plant\PlantC.cs" />
+    <Compile Include="Plant\PlantForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="UriMeasure\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

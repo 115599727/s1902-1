@@ -30,7 +30,7 @@
             <c1:C1ComboBox x:Name="cmbTheme" IsEditable="False" SelectedItemChanged="CmbTheme_SelectedItemChanged" Width="200" Margin="5" />
             <Button>
                 <StackPanel Orientation="Horizontal">
-                    <iconPacks:PackIconModern Width="20" Height="20" Kind="App" />
+                    
                     <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="deploy cupcakes" />
                 </StackPanel>
             </Button>
@@ -48,7 +48,7 @@
         <Ribbon x:Name="ribbon" HorizontalAlignment="Stretch" Margin="0" Panel.ZIndex="10" WindowIconVisibility="Hidden" Grid.Row="0"  >
             <Ribbon.ApplicationMenu>
 
-                <RibbonApplicationMenu KeyTip="F" >
+                <RibbonApplicationMenu KeyTip="F"  >
                     
                     <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
                     <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
@@ -68,7 +68,7 @@
             </Ribbon.ApplicationMenu>
 
             <ribbon:RibbonTab Header="{DynamicResource Ribbon.HOME}" KeyTip="H" GroupSizeReductionOrder="Theme, Editing, Cells, Number, Alignment, Font, Clipboard">
-                <ribbon:RibbonGroup x:Name="ribStatus" Margin="0,1" Header="{DynamicResource Ribbon.Status}" QuickAccessToolBarId="Theme" >
+                <ribbon:RibbonGroup x:Name="ribStatus" Margin="0,1"   Header="{DynamicResource Ribbon.Status}" QuickAccessToolBarId="Theme" >
                     <!--<ribbon:RibbonComboBox x:Name="ribcmbTheme" IsEnabled="True" SelectionBoxWidth="160"  >
                         <ribbon:RibbonGallery x:Name="themeGallery" MaxColumnCount="1" 
                                               ScrollViewer.VerticalScrollBarVisibility="Hidden">
@@ -86,7 +86,7 @@
                         <ribbon:RibbonMenuItem Header="Match Destination Formatting (K)"  ToolTipTitle="Match Destination Formatting (K)" />
                         <ribbon:RibbonMenuItem Header="Paste Special..."/>
                     </ribbon:RibbonSplitButton>-->
-                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}" Command=""  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico"/>
+                    <ribbon:RibbonButton   Label="{DynamicResource Ribbon.Action.SampleRigister}"   LargeImageSource="../medicsidei.ico" Command="{Binding NavigateCommand}" CommandParameter="RegistSample"/>
 
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico"/>
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico"/>
@@ -98,6 +98,9 @@
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.SampleRigister}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico"/>
                     <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.ViewT}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico" Command="{Binding NavigateCommand}" CommandParameter="ViewT"/>
 
+                </ribbon:RibbonGroup>
+                <ribbon:RibbonGroup x:Name="MenuGroup" >
+                    <ribbon:RibbonButton Label="{DynamicResource Ribbon.Action.ViewT}"  ToolTipTitle="Cut (Ctrl+X)" LargeImageSource="../medicsidei.ico" Command="{Binding NavigateCommand}" CommandParameter="ViewT"/>
                 </ribbon:RibbonGroup>
             </ribbon:RibbonTab>
             <!--隐藏-->

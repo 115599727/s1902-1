@@ -16,7 +16,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -180,6 +181,10 @@
       <Project>{56e38d45-1715-40ea-9f53-81c60c37d027}</Project>
       <Name>UITestModule</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UIUriMeasure\UIUriMeasure.csproj">
+      <Project>{114f2eeb-e5ab-42bc-a718-7579e7a94421}</Project>
+      <Name>UIUriMeasure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UriMeasureBussiness\UriMeasureBussiness.csproj">
       <Project>{bf451939-cb29-4764-9df6-9da6cab5223f}</Project>
       <Name>UriMeasureBussiness</Name>
@@ -192,5 +197,14 @@
     <Resource Include="medicside_blue.ico" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\about32.png" />
+    <Resource Include="Resources\Delete.LargeImage.png" />
+    <Resource Include="Resources\DingweiCe.LargeImage.png" />
+    <Resource Include="Resources\Edit.LargeImage.png" />
+    <Resource Include="Resources\Flag.LargeImage.png" />
+    <Resource Include="Resources\Fuchace.LargeImage.png" />
+    <Resource Include="Resources\Run.LargeImage.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

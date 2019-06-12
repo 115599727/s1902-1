@@ -1,0 +1,9 @@
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\bin\Debug\UriMeasureDataAccess.dll
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\bin\Debug\UriMeasureDataAccess.pdb
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\obj\Debug\UriMeasureDataAccess.csprojAssemblyReference.cache
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\obj\Debug\UriMeasureDataAccess.csproj.CoreCompileInputs.cache
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\obj\Debug\UriMeasureDataAccess.dll
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\obj\Debug\UriMeasureDataAccess.pdb
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\bin\Debug\UriMeasureData.dll
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\bin\Debug\UriMeasureData.pdb
+D:\S1902软件项目\Develop\github\UriMeasureDataAccess\obj\Debug\UriMeasureDataAccess.csproj.CopyComplete

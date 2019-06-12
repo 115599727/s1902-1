@@ -8,6 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("medicside_blue.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/about32.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/delete.largeimage.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dingweice.largeimage.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/edit.largeimage.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/flag.largeimage.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/fuchace.largeimage.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/run.largeimage.png")]
 
 

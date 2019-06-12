@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UriMeasureBussiness
+namespace Medicside.UriMeasure.Bussiness.Plant
 {
-    public class Class1
+   public class PlantC:PlantForm
     {
+
     }
 }

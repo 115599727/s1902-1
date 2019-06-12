@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\UIUriMeasure",
+    "\\UIUriMeasure\\Views"
   ],
+  "SelectedNode": "\\UIUriMeasure\\Views\\RegistSample.xaml",
   "PreviewInSolutionExplorer": false
 }

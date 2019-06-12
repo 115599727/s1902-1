@@ -1,4 +1,5 @@
-﻿using Prism.Ioc;
+﻿using Medicside.UriMeasure.Bussiness.Plant;
+using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
 using UITestModule.Views;
@@ -15,11 +16,14 @@ namespace UITestModule
             //启动时注册
             //var regionManager = containerProvider.Resolve<IRegionManager>();
             //regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewT));
+
+            PlantForm.Log.Info("Initial Module");
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<ViewT>();
         }
+        
     }
 }

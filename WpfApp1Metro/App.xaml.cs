@@ -11,6 +11,7 @@ using Prism.Unity;
 using log4net;
 using Medicside.UriMeasure.Bussiness;
 using WpfApp1Metro.Views;
+using Medicside.UriMeasure.Bussiness.Plant;
 
 namespace WpfApp1Metro
 {
@@ -20,20 +21,23 @@ namespace WpfApp1Metro
     public partial class App : PrismApplication
     {
         public static readonly ILog Log = LogManager.GetLogger("RollingLogFileAppender");
+       
         public override void Initialize()
         {
 
             base.Initialize();
-            PlantForm.SetLogger(Log);
-            PlantForm.Log.Info("Start UriMeasure");
+
         }
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-           //this.r
+            //this.r
         }
+        
         protected override Window CreateShell()
         {
-
+            //创建检测类型
+            PlantForm.GetInstance(Log,PlantMeasureType.TypeBMorphplogy);
+            PlantForm.Log.Info("Start UriMeasure");
             return Container.Resolve<MainWindow>();
 
         }
@@ -44,6 +48,8 @@ namespace WpfApp1Metro
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<UITestModule.ViewTestModule>();
+            moduleCatalog.AddModule < UIUriMeasure.UIUriMeasureViewModule> ();
+
         }
     }
 }

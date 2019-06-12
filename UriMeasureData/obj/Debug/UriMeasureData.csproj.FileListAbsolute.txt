@@ -1,0 +1,8 @@
+D:\S1902软件项目\Develop\github\UriMeasureData\bin\Debug\UriMeasureData.dll
+D:\S1902软件项目\Develop\github\UriMeasureData\bin\Debug\UriMeasureData.pdb
+D:\S1902软件项目\Develop\github\UriMeasureData\obj\Debug\UriMeasureData.csprojAssemblyReference.cache
+D:\S1902软件项目\Develop\github\UriMeasureData\obj\Debug\UriMeasureData.csproj.GenerateResource.cache
+D:\S1902软件项目\Develop\github\UriMeasureData\obj\Debug\UriMeasureData.csproj.CoreCompileInputs.cache
+D:\S1902软件项目\Develop\github\UriMeasureData\obj\Debug\UriMeasureData.dll
+D:\S1902软件项目\Develop\github\UriMeasureData\obj\Debug\UriMeasureData.pdb
+D:\S1902软件项目\Develop\github\UriMeasureData\obj\Debug\UriMeasure.Data.Properties.Resources.resources

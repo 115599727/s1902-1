@@ -182,7 +182,6 @@ D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\tr\C1.WPF.4.resources
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\zh\C1.WPF.4.resources.dll
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\zh-Hans\C1.WPF.4.resources.dll
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\zh-Hant\C1.WPF.4.resources.dll
-D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csprojAssemblyReference.cache
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\App.g.cs
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro_MarkupCompile.cache
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro_MarkupCompile.lref
@@ -191,8 +190,6 @@ D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\Dictionary.baml
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.g.resources
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.Properties.Resources.resources
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csproj.GenerateResource.cache
-D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csproj.CoreCompileInputs.cache
-D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csproj.CopyComplete
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.exe
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.pdb
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\C1.WPF.Theming.4.dll
@@ -225,3 +222,10 @@ D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\NewFolder1\FlyoutLeft
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\NewFolder1\FlyoutLeftView.g.cs
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\NewFolder1\Window1.g.cs
 D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\NewFolder1\Window1.baml
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\C1.WPF.FlexGrid.4.dll
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\C1.WPF.FlexGrid.4.xml
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\UIUriMeasure.dll
+D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\UIUriMeasure.pdb
+D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csprojAssemblyReference.cache
+D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csproj.CoreCompileInputs.cache
+D:\S1902软件项目\Develop\github\WpfApp1Metro\obj\Debug\WpfApp1Metro.csproj.CopyComplete

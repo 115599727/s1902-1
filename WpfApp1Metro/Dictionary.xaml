@@ -28,7 +28,16 @@
     <sys:String x:Key="Ribbon.Status">设备状态</sys:String>
     <sys:String x:Key="Ribbon.Action">操作项目</sys:String>
     <sys:String x:Key="Ribbon.Action.SampleRigister">样本登记</sys:String>
+    <sys:String x:Key="Ribbon.Action.MeasureResult">检验结果</sys:String>
     <sys:String x:Key="Ribbon.Action.ViewT">测试功能</sys:String>
     <sys:String x:Key="Ribbon.Menu.Setting">配置</sys:String>
     <sys:String x:Key="Ribbon.Menu.Exit">退出</sys:String>
+
+    <sys:String x:Key="UiUriMeasure.Register.Toolbar.Delete">删除</sys:String>
+    <sys:String x:Key="UiUriMeasure.Register.Toolbar.Test">执行检测</sys:String>
+    <sys:String x:Key="UiUriMeasure.Register.Toolbar.EditItem">编辑检测项</sys:String>
+    <sys:String x:Key="UiUriMeasure.Register.Toolbar.TestP">定位测试</sys:String>
+    <sys:String x:Key="UiUriMeasure.Register.Toolbar.TestA">急诊测试</sys:String>
+    <sys:String x:Key="UiUriMeasure.Register.Toolbar.TestR">复查测试</sys:String>
+    <sys:String x:Key="UiUriMeasure.Register.Toolbar.SelectAll">全选</sys:String>
 </ResourceDictionary>

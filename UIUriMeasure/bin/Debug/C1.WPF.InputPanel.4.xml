@@ -1,0 +1,1487 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>C1.WPF.InputPanel.4</name>
+  </assembly>
+  <members>
+    <member name="T:C1.WPF.InputPanel.C1DataPager">
+      <summary>
+            The C1DataPager control lets user to navigate to a specific item.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.ChangeVisualStateMove(System.Boolean)">
+      <summary>
+            Updates the current visual state of the Move visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.ChangeVisualStateMoveFirst(System.Boolean)">
+      <summary>
+            Updates the current visual state of the MoveFirst visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.ChangeVisualStateMovePrevious(System.Boolean)">
+      <summary>
+            Updates the current visual state of the MovePrevious visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.ChangeVisualStateMoveNext(System.Boolean)">
+      <summary>
+            Updates the current visual state of the MoveNext visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.ChangeVisualStateMoveLast(System.Boolean)">
+      <summary>
+            Updates the current visual state of the MoveLast visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.ChangeVisualStateCommon(System.Boolean)">
+      <summary>
+            Updates the current visual state of the Common visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.ChangeVisualStateDisplayMode(System.Boolean)">
+      <summary>
+            Updates the current visual state of the DisplayMode visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1DataPager.CurrentIndexChanging">
+      <summary>
+            Event handler for when PageIndex is changing.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.MoveToFirstCommand">
+      <summary>
+            Move to first item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.MoveToLastCommand">
+      <summary>
+            Move to last item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.MoveToNextCommand">
+      <summary>
+            Move to next item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.MoveToPreviousCommand">
+      <summary>
+            Move to previous item.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.CanMoveItem">
+      <summary>
+            Gets a value indicating whether this instance can change.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.CanMoveItemProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.CanMoveItem" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.CanMoveToFirstItem">
+      <summary>
+            Gets a value indicating whether this instance can move to the first item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.CanMoveToFirstItemProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.CanMoveToFirstItem" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.CanMoveToLastItem">
+      <summary>
+            Gets a value indicating whether this instance can move to the last item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.CanMoveToLastItemProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.CanMoveToLastItem" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.CanMoveToNextItem">
+      <summary>
+            Gets a value indicating whether this instance can move to the next item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.CanMoveToNextItemProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.CanMoveToNextItem" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.CanMoveToPreviousItem">
+      <summary>
+            Gets a value indicating whether this instance can move to the previous item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.CanMoveToPreviousItemProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.CanMoveToPreviousItem" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.DisplayMode">
+      <summary>
+            Gets or sets a value that indicates how the <see cref="T:C1.WPF.InputPanel.C1DataPager" /> will render.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.DisplayModeProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.DisplayMode" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.TotalCount">
+      <summary>
+            Gets or sets the count of the collection data.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.TotalCountProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.TotalCount" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.CurrentIndex">
+      <summary>
+            Gets or sets the index of the current item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.CurrentIndexProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.CurrentIndex" /> dependency property. 
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1DataPager.CurrentIndexChanged">
+      <summary> 
+            Event raised when the <see cref="P:CurrentIndex" /> property has changed.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.Source">
+      <summary>
+            Gets or sets the data source of <see cref="T:C1.WPF.InputPanel.C1DataPager" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.SourceProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.Source" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.NumericButtonStyle">
+      <summary>
+            Gets or sets the style that will be used for the navigation buttons.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.NumericButtonStyleProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.NumericButtonStyle" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.LabelForeground">
+      <summary>
+            Gets or sets the background of label.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.LabelForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.LabelForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.CornerRadius">
+      <summary>
+            Gets or sets a value that represents the degree to which the corners of the element are rounded.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.CornerRadiusProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.CornerRadius" /> dependency property. 
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1DataPager.IsMouseOverChanged">
+      <summary> 
+            Event raised when the <see cref="P:IsMouseOver" /> property has changed.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.MouseOverBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to highlight the control when it has the mouse over.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.MouseOverBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.MouseOverBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.PressedBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to paint a button when it is pressed.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.PressedBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.PressedBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.FocusBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to highlight the focused control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.FocusBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.FocusBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.ButtonBackground">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> that will be assigned to the Background of the buttons inside the control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.ButtonBackgroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.ButtonBackground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1DataPager.ButtonForeground">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> that will be assigned to the Foreground of the buttons inside the control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1DataPager.ButtonForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1DataPager.ButtonForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1DataPager" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1DataPager" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1DataPager.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+      <summary>
+            Invoked whenever the effective value of any dependency property has been updated.
+            </summary>
+      <param name="e">
+            The event data that describes the property that changed, as well as old and new values.
+            </param>
+    </member>
+    <member name="T:C1.WPF.InputPanel.PagerDisplayMode">
+      <summary>
+            Specifies how page controls are displayed on the <see cref="T:C1.WPF.InputPanel.C1DataPager" /> control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.PagerDisplayMode.FirstLastNumeric">
+      <summary>
+            Shows the First and Last buttons, and the numeric display.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.PagerDisplayMode.FirstLastPreviousNext">
+      <summary>
+            Shows the First, Last, Previous, and Next buttons.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.PagerDisplayMode.FirstLastPreviousNextNumeric">
+      <summary>
+            Shows the First, Last, Previous, and Next buttons, and the numeric display.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.PagerDisplayMode.Numeric">
+      <summary>
+            Shows the numeric display.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.PagerDisplayMode.PreviousNext">
+      <summary>
+            Shows the Previous and Next buttons.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.PagerDisplayMode.PreviousNextNumeric">
+      <summary>
+            Shows the Previous and Next buttons, and the numeric display.
+            </summary>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputPanel">
+      <summary>
+            Provides easy display and edit collection from a layout.
+            </summary>
+      <summary>
+            The C1InputPanel enables user to load boolean data in this control.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.ValidateCurrentItem">
+      <summary>
+            Occurs before validation of the current item.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.AddingNewItem">
+      <summary>
+            Occurs before adding a new item.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.DeletingItem">
+      <summary>
+            Occurs before deleting an item.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.GeneratingInput">
+      <summary>
+            EventHandler before create editor.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.AddedNewItem">
+      <summary>
+            Occurs after new item was added.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.EditedCurrentItem">
+      <summary>
+            Occurs after current item was edited.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.CancelledCurrentItem">
+      <summary>
+            Occurs after current item was cancelled.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.DeletedCurrentItem">
+      <summary>
+            Occurs after current item was deleted.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanel.ChangeVisualStateReadOnly(System.Boolean)">
+      <summary>
+            Updates the current visual state of the ReadOnly visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanel.ChangeVisualStateNavigationVisibility(System.Boolean)">
+      <summary>
+            Updates the current visual state of the NavigationVisibility visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanel.ChangeVisualStateAddButtonVisibility(System.Boolean)">
+      <summary>
+            Updates the current visual state of the AddButtonVisibility visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanel.ChangeVisualStateDeleteButtonVisibility(System.Boolean)">
+      <summary>
+            Updates the current visual state of the DeleteButtonVisibility visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanel.ChangeVisualStateAddButtonEnableState(System.Boolean)">
+      <summary>
+            Updates the current visual state of the AddButtonEnableState visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanel.ChangeVisualStateDeleteButtonEnableState(System.Boolean)">
+      <summary>
+            Updates the current visual state of the DeleteButtonEnableState visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ValidationErrors">
+      <summary>
+            Indicates the list of validation errors.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.AddNewItemCommand">
+      <summary>
+            Adds a new item to the <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.DeleteCurrentItemCommand">
+      <summary>
+            Deletes the current item.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.CommitCommand">
+      <summary>
+            Commits the edited content.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.CancelCommand">
+      <summary>
+            Cancels editing.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.Header">
+      <summary>
+            Gets or sets the header of <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.Header" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.AutoCommit">
+      <summary>
+            Gets or sets a value that indicates whether the input data is committed automatically.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.AutoCommitProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.AutoCommit" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.AutoGenerate">
+      <summary>
+            Gets or sets a value that indicates whether the input controls are created automatically.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.AutoGenerateProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.AutoGenerate" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.CurrentItem">
+      <summary>
+            Gets or sets an item which is currently visible in <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.CurrentItemProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.CurrentItem" /> dependency property. 
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanel.CurrentItemChanged">
+      <summary> 
+            Event raised when the <see cref="P:CurrentItem" /> property has changed.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ItemsTemplate">
+      <summary>
+            Gets or sets a template applied to <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.ItemsTemplateProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.ItemsTemplate" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ItemsPanelTemplate">
+      <summary>
+            Gets or sets a template that defines the <see cref="T:C1.WPF.InputPanel.C1InputPanel" /> that controls the layout of items.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.ItemsPanelTemplateProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.ItemsPanelTemplate" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ItemsSource">
+      <summary>
+            Gets or sets a collection of items that will be shown.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.ItemsSourceProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.ItemsSource" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.IsReadOnly">
+      <summary>
+            Gets or sets a value that determines if the <see cref="T:C1.WPF.InputPanel.C1InputPanel" /> is read-only.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.IsReadOnlyProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.IsReadOnly" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.DataPagerVisibility">
+      <summary>
+            Gets or sets a value that determines whether <see cref="T:C1.WPF.InputPanel.C1DataPager" /> is shown.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.DataPagerVisibilityProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.DataPagerVisibility" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.AddButtonVisibility">
+      <summary>
+            Gets or sets a value that determines whether the Add button is shown.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.AddButtonVisibilityProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.AddButtonVisibility" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.DeleteButtonVisibility">
+      <summary>
+            Gets or sets a value that determines whether the Delete button is shown.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.DeleteButtonVisibilityProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.DeleteButtonVisibility" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ValidationHeaderForeground">
+      <summary>
+            Gets or sets the foreground of error information header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.ValidationHeaderForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.ValidationHeaderForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ValidationContentForeground">
+      <summary>
+            Gets or sets the foreground of error information content.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.ValidationContentForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.ValidationContentForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ValidationBackground">
+      <summary>
+            Gets or sets the background of C1InputPanelValidationSummary.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.ValidationBackgroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.ValidationBackground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.FooterButtonBackground">
+      <summary>
+            Gets or sets the background used for the inner footer buttons.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.FooterButtonBackgroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.FooterButtonBackground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.FooterButtonForeground">
+      <summary>
+            Gets or sets the foreground used for the inner footer buttons.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.FooterButtonForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.FooterButtonForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.FooterBorderStyle">
+      <summary>
+            Gets or sets the style used for inner footer border.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.FooterBorderStyleProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.FooterBorderStyle" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.NavigationBackground">
+      <summary>
+            Gets or sets the background of navigation bar.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.NavigationBackgroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.NavigationBackground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.LabelForeground">
+      <summary>
+            Gets or sets the background of label.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.LabelForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.LabelForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.DisplayMode">
+      <summary>
+            Gets or sets a value that indicates how the <see cref="T:C1.WPF.InputPanel.C1DataPager" /> will render.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.DisplayModeProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.DisplayMode" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.NavigationButtonStyle">
+      <summary>
+            Gets or sets the style that will be used for <see cref="T:C1.WPF.InputPanel.C1DataPager" /> navigation buttons.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.NavigationButtonStyleProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.NavigationButtonStyle" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.CornerRadius">
+      <summary>
+            Gets or sets a value that represents the degree to which the corners of the element are rounded.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.CornerRadiusProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.CornerRadius" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderTemplate">
+      <summary>
+            Gets or sets the data template used to display the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderTemplateProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderTemplate" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontFamily">
+      <summary>
+            Gets or sets the font family of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderFontFamilyProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontFamily" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontSize">
+      <summary>
+            Gets or sets the font size of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderFontSizeProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontSize" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontStretch">
+      <summary>
+            Gets or sets the font stretch of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderFontStretchProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontStretch" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontStyle">
+      <summary>
+            Gets or sets the font style of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderFontStyleProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontStyle" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontWeight">
+      <summary>
+            Gets or sets the font weight of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderFontWeightProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderFontWeight" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderPadding">
+      <summary>
+            Gets or sets the padding of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderPaddingProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderPadding" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HorizontalHeaderAlignment">
+      <summary>
+            Gets or sets the HorizontalContentAlignment of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HorizontalHeaderAlignmentProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HorizontalHeaderAlignment" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.VerticalHeaderAlignment">
+      <summary>
+            Gets or sets the VerticalContentAlignment of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.VerticalHeaderAlignmentProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.VerticalHeaderAlignment" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderBackground">
+      <summary>
+            Gets or sets the background brush of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderBackgroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderBackground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.HeaderForeground">
+      <summary>
+            Gets or sets the foreground brush of the header.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.HeaderForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.HeaderForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.MouseOverBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to highlight the control when it has the mouse over.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.MouseOverBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.MouseOverBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.PressedBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to paint a button when it is pressed.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.PressedBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.PressedBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.FocusBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to highlight the focused control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.FocusBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.FocusBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ButtonBackground">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> that will be assigned to the Background of the buttons inside the control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.ButtonBackgroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.ButtonBackground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanel.ButtonForeground">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> that will be assigned to the Foreground of the buttons inside the control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanel.ButtonForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanel.ButtonForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanel.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanel.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputPanel" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputPanelMaskAttribute">
+      <summary>
+            Specifies the mask settings for value of a data field.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelMaskAttribute.Mask">
+      <summary>
+            Gets a mask expression.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanelMaskAttribute.#ctor(System.String)">
+      <summary>
+            Specifies the mask settings for the value of a data field.
+            </summary>
+      <param name="mask">
+      </param>
+    </member>
+    <member name="T:C1.WPF.InputPanel.ErrorInfo">
+      <summary>
+            Indicates the information of errors occurred while validating <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.   
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.ErrorInfo.ErrorInputName">
+      <summary>
+            Indicates the name of the error input field.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.ErrorInfo.ErrorContent">
+      <summary>
+            Indicates the error content.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.ErrorInfo.ErrorType">
+      <summary>
+            Indicates the error types.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.ErrorInfo.ValidationHeaderForeground">
+      <summary>
+            Gets or sets the foreground of error information header.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.ErrorInfo.ValidationContentForeground">
+      <summary>
+            Gets or sets the foreground of error information content.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.ErrorInfo.PropertyChanged">
+      <summary>
+            Occurs when a property value changes.
+            </summary>
+    </member>
+    <member name="T:C1.WPF.InputPanel.ErrorType">
+      <summary>
+            Indicates the error types.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.ErrorType.DataErrorInfo">
+      <summary>
+            Indicates the errors coming from IDataErrorInfo.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.ErrorType.ValidationResult">
+      <summary>
+            Indicates the errors coming from ValidationResult.
+            </summary>
+    </member>
+    <member name="T:C1.WPF.InputPanel.GeneratingInputEventArgs">
+      <summary>
+            Provides event data for OnGeneratingInput events.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.GeneratingInputEventArgs.PropertyType">
+      <summary>
+            Gets or sets the property type.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.GeneratingInputEventArgs.PropertyName">
+      <summary>
+            Gets or sets the property name.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.GeneratingInputEventArgs.Editor">
+      <summary>
+            Gets or sets the property editor.
+            </summary>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputPanelPresenter">
+      <summary>
+            An instance of this class is used in the <see cref="T:C1.WPF.InputPanel.C1InputPanel" />'s control template
+            to define a place in the control's visual tree where a pane representing individual input fields 
+            will appear.
+            </summary>
+      <summary>
+            C1InputPanel's control template.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanelPresenter.ChangeVisualStateGenerateStates(System.Boolean)">
+      <summary>
+            Updates the current visual state of the AutoGenerateStates visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="E:C1.WPF.InputPanel.C1InputPanelPresenter.GeneratingInput">
+      <summary>
+            EventHandler before create editor.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.InputControls">
+      <summary>
+            Gets or sets an input control collection which is shown in <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.InputControlsProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.InputControls" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.AutoGenerate">
+      <summary>
+            Gets or sets a value that indicates whether the input controls are created automatically.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.AutoGenerateProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.AutoGenerate" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.CurrentItem">
+      <summary>
+            Gets or sets an item which is currently visible in <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.CurrentItemProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.CurrentItem" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.ItemsTemplate">
+      <summary>
+            Gets or sets a template applied to <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.ItemsTemplateProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.ItemsTemplate" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.ItemsPanelTemplate">
+      <summary>
+            Gets or sets a template that defines the <see cref="T:C1.WPF.InputPanel.C1InputPanel" /> that controls the layout of items.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.ItemsPanelTemplateProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.ItemsPanelTemplate" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.IsReadOnly">
+      <summary>
+            Gets or sets a value that determines if the input controls are read-only.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.IsReadOnlyProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.IsReadOnly" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.LabelForeground">
+      <summary>
+            Gets or sets the background of label.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.LabelForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.LabelForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.CornerRadius">
+      <summary>
+            Gets or sets a value that represents the degree to which the corners of the element are rounded.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.CornerRadiusProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.CornerRadius" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.MouseOverBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to highlight the control when it has the mouse over.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.MouseOverBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.MouseOverBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.PressedBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to paint a button when it is pressed.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.PressedBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.PressedBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.FocusBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to highlight the focused control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.FocusBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.FocusBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.ButtonBackground">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> that will be assigned to the Background of the buttons inside the control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.ButtonBackgroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.ButtonBackground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelPresenter.ButtonForeground">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> that will be assigned to the Foreground of the buttons inside the control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelPresenter.ButtonForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelPresenter.ButtonForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanelPresenter.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputPanelPresenter" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanelPresenter.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputPanelPresenter" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputPanelValidationSummary">
+      <summary>
+            Represents a validation summary for <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelValidationSummary.HasErrors">
+      <summary>
+            Gets a value indicating whether this instance has errors.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputPanelValidationSummary.Errors">
+      <summary>
+            Gets the pending validation errors.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputPanelValidationSummary.ErrorsProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputPanelValidationSummary.Errors" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputPanelValidationSummary.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputPanelValidationSummary" />.
+            </summary>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputBase">
+      <summary>
+            Displays and edits the data in <see cref="T:C1.WPF.InputPanel.C1InputPanel" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputBase.ChangeVisualStateReadOnlyStates(System.Boolean)">
+      <summary>
+            Updates the current visual state of the ReadOnlyStates visual state group to match the object's properties.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputBase.IsReadOnlyBinding">
+      <summary>
+            Binds the IsReadOnly property to the current input control.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputBase.IsEnabledBinding">
+      <summary>
+            Binds the IsEnabled property to the current input control.
+            </summary>
+      <returns>
+      </returns>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.DataBinding">
+      <summary>
+            Gets or sets the data binding.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.Order">
+      <summary>
+            Gets or sets the constol order.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.IsReadOnly">
+      <summary>
+            Gets or sets a value that determines if this control is read-only.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.IsReadOnlyProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.IsReadOnly" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.Header">
+      <summary>
+            Gets or sets the property name of this control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.HeaderProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.Header" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.LabelForeground">
+      <summary>
+            Gets or sets the background of label.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.LabelForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.LabelForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.CornerRadius">
+      <summary>
+            Gets or sets a value that represents the degree to which the corners of the element are rounded.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.CornerRadiusProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.CornerRadius" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.MouseOverBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to highlight the control when it has the mouse over.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.MouseOverBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.MouseOverBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.PressedBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to paint a button when it is pressed.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.PressedBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.PressedBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.FocusBrush">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> used to highlight the focused control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.FocusBrushProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.FocusBrush" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.ButtonBackground">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> that will be assigned to the Background of the buttons inside the control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.ButtonBackgroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.ButtonBackground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputBase.ButtonForeground">
+      <summary>
+            Gets or sets the <see cref="T:System.Windows.Media.Brush" /> that will be assigned to the Foreground of the buttons inside the control.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputBase.ButtonForegroundProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputBase.ButtonForeground" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputBase.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputBase" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputBase.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputBase" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputCheckBox">
+      <summary>
+            Displays and edits the bool type of data.
+            </summary>
+      <summary>
+            The C1InputCheckBox allows user to load the boolean data in this control.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputCheckBox.IsThreeState">
+      <summary>
+            Gets or sets the ThreeState of CheckBox.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputCheckBox.IsThreeStateProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputCheckBox.IsThreeState" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputCheckBox.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputCheckBox" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputCheckBox.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputCheckBox" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputComboBox">
+      <summary>
+            Displays and edits the enum type of data.
+            </summary>
+      <summary>
+            The C1InputComboBox lets user load the enum data in this control.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputComboBox.ItemsSource">
+      <summary>
+            Gets or sets the data source of ComboBox.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputComboBox.ItemsSourceProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputComboBox.ItemsSource" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputComboBox.EnumType">
+      <summary>
+            Gets or sets the enum type of ComboBox.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputComboBox.EnumTypeProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputComboBox.EnumType" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputComboBox.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputComboBox" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputComboBox.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputComboBox" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputDateTimePicker">
+      <summary>
+            Displays and edits the date type of data.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputDateTimePicker.EditMode">
+      <summary>
+            Determines the C1DateTimePicker edit mode.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputDateTimePicker.EditModeProperty">
+      <summary>
+            Identifies the "EditMode" dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputDateTimePicker.AllowNull">
+      <summary>
+            Gets or sets a value indicating whether the editing control allows null values.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputDateTimePicker.AllowNullProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputDateTimePicker.AllowNull" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputDateTimePicker.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputDateTimePicker" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputDateTimePicker.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputDateTimePicker" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputMaskedTextBox">
+      <summary>
+            Displays and edits mask attribute string type of data.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputMaskedTextBox.Mask">
+      <summary>
+            Gets or sets the input mask.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputMaskedTextBox.MaskProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputMaskedTextBox.Mask" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputMaskedTextBox.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputMaskedTextBox" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputMaskedTextBox.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputMaskedTextBox" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputNumericBox">
+      <summary>
+            Displays and edits the numeric type of data.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputNumericBox.AllowNull">
+      <summary>
+            Gets or sets a value indicating whether the editing control allows null values.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputNumericBox.AllowNullProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputNumericBox.AllowNull" /> dependency property. 
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputNumericBox.Format">
+      <summary>
+            Gets or sets the value for the Format of the <see cref="T:C1.WPF.C1NumericBox" />.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputNumericBox.FormatProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputNumericBox.Format" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputNumericBox.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputNumericBox" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputNumericBox.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputNumericBox" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.WPF.InputPanel.C1InputTextBox">
+      <summary>
+            Displays and edits the string type of data.
+            </summary>
+    </member>
+    <member name="P:C1.WPF.InputPanel.C1InputTextBox.TextWrapping">
+      <summary>
+            Gets or sets a value indicating whether the text allows wrapping.
+            </summary>
+    </member>
+    <member name="F:C1.WPF.InputPanel.C1InputTextBox.TextWrappingProperty">
+      <summary>
+            Identifies the <see cref="P:C1.WPF.InputPanel.C1InputTextBox.TextWrapping" /> dependency property. 
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputTextBox.#ctor">
+      <summary>
+            Initializes a new instance of a <see cref="T:C1.WPF.InputPanel.C1InputTextBox" />.
+            </summary>
+    </member>
+    <member name="M:C1.WPF.InputPanel.C1InputTextBox.OnApplyTemplate">
+      <summary>
+            Builds the visual tree for the <see cref="T:C1.WPF.InputPanel.C1InputTextBox" /> control when a new template is applied.
+            </summary>
+      <remarks>
+            This method is invoked whenever application code or an internal process, such as a rebuilding layout pass, calls the <see cref="M:ApplyTemplate" /> method.
+            </remarks>
+    </member>
+    <member name="T:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel">
+      <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.Culture">
+      <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.First">
+      <summary>
+              Looks up a localized string similar to First.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.Last">
+      <summary>
+              Looks up a localized string similar to Last.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.Next">
+      <summary>
+              Looks up a localized string similar to Next.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.PagerPrefix">
+      <summary>
+              Looks up a localized string similar to Page.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.PagerSuffix">
+      <summary>
+              Looks up a localized string similar to of {0}.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.Previous">
+      <summary>
+              Looks up a localized string similar to Previous.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.Add">
+      <summary>
+              Looks up a localized string similar to Add.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.Delete">
+      <summary>
+              Looks up a localized string similar to Delete.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.OK">
+      <summary>
+              Looks up a localized string similar to OK.
+            </summary>
+    </member>
+    <member name="P:C1.Silverlight.InputPanel.Resources.C1_Silverlight_InputPanel.Cancel">
+      <summary>
+              Looks up a localized string similar to Cancel.
+            </summary>
+    </member>
+  </members>
+</doc>
