@@ -1,13 +1,14 @@
-﻿using System;
+﻿using Medicside.UriMeasure.Data.Retest;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UriMeasure.Data.Retest;
+using Medicside.UriMeasure.Data.Retest;
 
-namespace UriMeasureDataAccess.DataHelper
+namespace Medicside.UriMeasure.DataAccess.DataHelper
 {
-    class RetestConditionDataHelper
+   public class RetestConditionDataHelper
     {
         public static List<MicroscopyCheckItem> GetMicrosCopyCheckItems()
         {

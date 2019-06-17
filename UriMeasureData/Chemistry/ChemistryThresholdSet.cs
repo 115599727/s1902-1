@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UriMeasure.Data.Chemistry
+namespace Medicside.UriMeasure.Data.Chemistry
 {
     /// <summary>
     /// 干化学临界值

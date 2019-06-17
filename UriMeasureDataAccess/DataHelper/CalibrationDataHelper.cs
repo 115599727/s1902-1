@@ -1,16 +1,13 @@
-﻿using System;
+﻿using Medicside.UriMeasure.Data.Calibration;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UriMeasureData.Calibration;
 
-namespace UriMeasureDataAccess.DataHelper
+namespace Medicside.UriMeasure.DataAccess.DataHelper
 {
     /// <summary>
     /// 校准数据
     /// </summary>
-   public class CalibrationDataHelper
+    public class CalibrationDataHelper
     {
         /// <summary>
         /// 校准记录

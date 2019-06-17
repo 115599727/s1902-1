@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Medicside.UriMeasure.Data.MorphologyQc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UriMeasure.Data.MorphologyQc;
+using Medicside.UriMeasure.Data.MorphologyQc;
 
-namespace UriMeasureDataAccess.DataHelper
+namespace Medicside.UriMeasure.DataAccess.DataHelper
 {
   public  class MorphologyQcDataHelper
     {

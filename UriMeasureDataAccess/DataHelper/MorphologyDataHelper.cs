@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Medicside.UriMeasure.Data.DataHelper
 {
-    class MorphologyDataHelper
+ public   class MorphologyDataHelper
     {
         public static List<MorphologyTestItem> GetMorphologyTestItems()
         {

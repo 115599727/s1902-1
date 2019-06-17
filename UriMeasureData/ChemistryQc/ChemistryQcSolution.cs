@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UriMeasure.Data.ChemistryQc
+namespace Medicside.UriMeasure.Data.ChemistryQc
 {
     public class ChemistryQcSolution
     {

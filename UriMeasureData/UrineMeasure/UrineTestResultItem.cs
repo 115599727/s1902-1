@@ -1,4 +1,4 @@
-﻿namespace UriMeasure.Data.UrineMeasure
+﻿namespace Medicside.UriMeasure.Data.UrineMeasure
 {
     public class UrineTestResultItem
     {

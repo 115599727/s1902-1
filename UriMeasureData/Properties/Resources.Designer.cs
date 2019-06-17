@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UriMeasure.Data.Properties {
+namespace Medicside.UriMeasure.Data.Properties {
     using System;
     
     

@@ -26,8 +26,18 @@ namespace WpfApp1Metro
         {
 
             base.Initialize();
-
+            DispatcherUnhandledException += App_DispatcherUnhandledException;
         }
+
+        private void App_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show("Error" + e.Exception.Message);
+            Log.Fatal(e.Exception.Message);
+
+            Log.Fatal(e.Exception.StackTrace);
+            e.Handled = true;
+        }
+
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             //this.r
@@ -37,9 +47,12 @@ namespace WpfApp1Metro
         {
             //创建检测类型
             PlantForm.GetInstance(Log,PlantMeasureType.TypeBMorphplogy);
-            PlantForm.Log.Info("Start UriMeasure");
-            return Container.Resolve<MainWindow>();
 
+            PlantForm.Log.Info("Start UriMeasure");
+
+            PlantForm.SetResourse(Application.Current.Resources);
+            return Container.Resolve<MainWindow>();
+            
         }
         //protected override IModuleCatalog CreateModuleCatalog()
         //{

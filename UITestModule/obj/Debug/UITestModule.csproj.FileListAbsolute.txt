@@ -119,3 +119,7 @@ D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\C1.WPF.DateTimeEditor
 D:\S1902软件项目\Develop\github\UITestModule\obj\Debug\UITestModule.csprojAssemblyReference.cache
 D:\S1902软件项目\Develop\github\UITestModule\obj\Debug\UITestModule.csproj.CoreCompileInputs.cache
 D:\S1902软件项目\Develop\github\UITestModule\obj\Debug\UITestModule.csproj.CopyComplete
+D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\UriMeasureData.dll
+D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\UriMeasureData.pdb
+D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\UriMeasureDataAccess.dll
+D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\UriMeasureDataAccess.pdb

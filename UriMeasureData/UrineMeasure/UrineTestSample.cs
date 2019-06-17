@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UriMeasure.Data.UrineMeasure
+namespace Medicside.UriMeasure.Data.UrineMeasure
 {
     /// <summary>
     /// 尿检测样本

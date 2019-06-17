@@ -60,6 +60,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Wpf.7.1.0.431\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -78,6 +79,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\RegistSampleItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -139,6 +141,10 @@
     <ProjectReference Include="..\UriMeasureBussiness\UriMeasureBussiness.csproj">
       <Project>{BF451939-CB29-4764-9DF6-9DA6CAB5223F}</Project>
       <Name>UriMeasureBussiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UriMeasureData\UriMeasureData.csproj">
+      <Project>{90AEFD70-21A3-4240-8591-042ACED2C342}</Project>
+      <Name>UriMeasureData</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

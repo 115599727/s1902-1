@@ -87,3 +87,7 @@ D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\log4net.dll
 D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureBussiness.dll
 D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureBussiness.pdb
 D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\log4net.xml
+D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureData.dll
+D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureData.pdb
+D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureDataAccess.dll
+D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureDataAccess.pdb

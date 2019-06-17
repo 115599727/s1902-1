@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UriMeasure.Data.Retest
+namespace Medicside.UriMeasure.Data.Retest
 {
 
     /// <summary>

@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Medicside.UriMeasure.Data.ChemistryQc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UriMeasure.Data.ChemistryQc;
+using Medicside.UriMeasure.Data.ChemistryQc;
 
-namespace UriMeasureDataAccess.DataHelper
+namespace Medicside.UriMeasure.DataAccess.DataHelper
 {
     public class ChemistryQcDataHelper
     {

@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,17 @@ namespace UIUriMeasure.ViewModels
 {
   public  class RegistSampleViewModel : BindableBase, INavigationAware
     {
+       
+
+   
+        public RegistSampleViewModel()
+        {
+            
+
+
+        }
+       
+
         bool INavigationAware.IsNavigationTarget(NavigationContext navigationContext)
         {
             return false;

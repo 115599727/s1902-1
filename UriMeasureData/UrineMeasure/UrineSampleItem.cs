@@ -1,13 +1,24 @@
 ﻿using System;
+using System.ComponentModel;
 
-namespace UriMeasure.Data.UrineMeasure
+namespace Medicside.UriMeasure.Data.UrineMeasure
 {
 
     /// <summary>
     /// 样本
     /// </summary>
-    public class SampleItem
+    public class SampleItem: INotifyPropertyChanged
     {
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChange(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                //根据PropertyChanged事件的委托类，实现PropertyChanged事件：
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
 
         public int ID { get; set; }
@@ -73,7 +84,7 @@ namespace UriMeasure.Data.UrineMeasure
         public DateTime SendDate { get; set; }
 
 
-        public DateTime RegisterDate { get; set; }
+        public DateTime RegistDate { get; set; }
         /// <summary>
         /// 送检部门
         /// </summary>
@@ -119,12 +130,21 @@ namespace UriMeasure.Data.UrineMeasure
 
         public String Note { get; set; }
 
-
-
         /// <summary>
         /// 界面复选选择项
         /// </summary>
-        public bool UISelected { get; set; }
+        /// 
+        private bool uiSelected;
+
+        public bool UISelected
+        {
+            get { return uiSelected; }
+            set
+            {
+                uiSelected = value;
+                NotifyPropertyChange("UISelected");
+            }
+        }
 
         /// <summary>
         /// 条码号

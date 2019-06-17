@@ -34,6 +34,7 @@
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,13 +63,24 @@
     <Compile Include="Plant\PlantC.cs" />
     <Compile Include="Plant\PlantForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BuissinessBase.cs" />
+    <Compile Include="UriMeasure\RegistSampleBiz.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="UriMeasure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UriMeasureDataAccess\UriMeasureDataAccess.csproj">
+      <Project>{0a80b3e1-5122-4209-aea8-c8994a988d7f}</Project>
+      <Name>UriMeasureDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UriMeasureData\UriMeasureData.csproj">
+      <Project>{90AEFD70-21A3-4240-8591-042ACED2C342}</Project>
+      <Name>UriMeasureData</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

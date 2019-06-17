@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace UriMeasure.Data.Chemistry
+namespace Medicside.UriMeasure.Data.Chemistry
 {
     /// <summary>
     /// 干化学测试项目

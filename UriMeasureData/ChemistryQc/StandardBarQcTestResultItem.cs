@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UriMeasure.Data.ChemistryQc
+namespace Medicside.UriMeasure.Data.ChemistryQc
 {
     public class StandardBarQcTestResultItem
     {

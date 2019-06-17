@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UriMeasure.Data.MorphologyQc
+namespace Medicside.UriMeasure.Data.MorphologyQc
 {
     /// <summary>
     /// 形态学质控液

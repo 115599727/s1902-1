@@ -9,6 +9,8 @@
     <sys:String x:Key="Cancel">
         Cancel
     </sys:String>
+    
+    
     <!--菜单项目名称-->
     <sys:String x:Key="Menum.UrineMeasure">
         尿检业务
@@ -40,4 +42,9 @@
     <sys:String x:Key="UiUriMeasure.Register.Toolbar.TestA">急诊测试</sys:String>
     <sys:String x:Key="UiUriMeasure.Register.Toolbar.TestR">复查测试</sys:String>
     <sys:String x:Key="UiUriMeasure.Register.Toolbar.SelectAll">全选</sys:String>
+    
+    <!--列明定义-->
+    <sys:String x:Key="UiUriMeasure.RegisterSample.SamplelistHead">选择|架号|管号|样本编号|测试项|条码号|病患名字|性别|年|齢|民族|病历号|病患类型|收费类型|样本类型|稀释|采样时间|送检时间|登记时间|送检科室|送检医生|检测时间|备注</sys:String>
+    <sys:String x:Key="UiUriMeasure.RegisterSample.SamplelistMap">UISelected|ShelfNumber|TubeNumber|SampleNo|TestType|BarCode|PatientName|PatientSex|PatientAge|PatientAgeType|Nation|RecordNo|PatientType|ChargeType|SampleType|DilutionMultiples|CollectTime|SendDate|RegisterDate|SendDepartment|SendtDoctor|TestDate|Note</sys:String>
+    
 </ResourceDictionary>

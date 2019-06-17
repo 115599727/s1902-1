@@ -7,3 +7,7 @@ D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBuss
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csprojAssemblyReference.cache
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csproj.CoreCompileInputs.cache
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\obj\Debug\UriMeasureBussiness.csproj.CopyComplete
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureData.dll
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureData.pdb
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureDataAccess.dll
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureDataAccess.pdb

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UriMeasure.Data
+namespace Medicside.UriMeasure.Data
 {
    public class DictionaryItem
     {
@@ -19,5 +19,7 @@ namespace UriMeasure.Data
         public string Value { get; set; }
 
         public string KeyWord { get; set; }
+
+
     }
 }

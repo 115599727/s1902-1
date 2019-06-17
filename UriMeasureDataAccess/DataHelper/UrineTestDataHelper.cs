@@ -1,16 +1,17 @@
-﻿using Medicside.UriMeasure.Data.DataHelper;
+﻿using Medicside.UriMeasure.Data;
+using Medicside.UriMeasure.Data.DataHelper;
 using Medicside.UriMeasure.Data.Morphology;
+using Medicside.UriMeasure.Data.UrineMeasure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UriMeasure.Data;
-using UriMeasure.Data.UrineMeasure;
 
-namespace UriMeasureDataAccess.DataHelper
+
+namespace Medicside.UriMeasure.DataAccess.DataHelper
 {
-    class UrineTestDataHelper
+  public  class UrineTestDataHelper
     {
         public static List<UrineTestResult> GetUrineTestResults()
         {
