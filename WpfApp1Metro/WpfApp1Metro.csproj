@@ -196,7 +196,19 @@
   <ItemGroup>
     <Resource Include="medicside_blue.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\cellpic.png" />
+    <Resource Include="Resources\confirm.png" />
+    <Resource Include="Resources\delresult.png" />
+    <Resource Include="Resources\Edit.png" />
+    <Resource Include="Resources\find.png" />
+    <Resource Include="Resources\Lis.png" />
+    <Resource Include="Resources\picBig.png" />
+    <Resource Include="Resources\print.png" />
+    <Resource Include="Resources\printCopys.png" />
+    <Resource Include="Resources\Result.png" />
+    <Resource Include="Resources\shenhe.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\about32.png" />
     <Resource Include="Resources\Delete.LargeImage.png" />

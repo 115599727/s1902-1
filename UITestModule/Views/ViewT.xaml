@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:UITestModule.Views"
               xmlns:prism="http://prismlibrary.com/" 
              prism:ViewModelLocator.AutoWireViewModel="True"
-             mc:Ignorable="d" 
+             mc:Ignorable="d" Height="500"
              >
     <Grid>
         <StackPanel>
@@ -14,10 +14,14 @@
             
             <TextBlock Text="View TEST" FontSize="28" />
             <TextBlock Text="{Binding DemoText}" FontSize="20" />
-            <TextBox x:Name="textBox"  Height="119" FontSize="25"  Text="{DynamicResource OK}" VerticalAlignment="Top" />
+            <TextBox x:Name="textBox"  Height="119" FontSize="25"  Text="{DynamicResource OK}" VerticalAlignment="Top"  />
             <Button  Content="对话框" Click="Button_Click" Width="300"  />
             <Button  Content="按下" Command="{Binding ExecuteDelegateCommand}" Width="300"  />
             <c1:C1FlexGrid x:Name="flexGrid"  Initialized="FlexGrid_Initialized" />
+            <TextBox  Text="{Binding Path=Age, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True,NotifyOnValidationError=True}"
+                      ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"
+                      />
+            
         </StackPanel>
     </Grid>
 </UserControl>

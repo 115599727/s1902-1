@@ -31,8 +31,8 @@ namespace Medicside.UriMeasure.Bussiness
             //加载列明
             //string cols = "选择|架号|管号|样本编号|条码号|病患名字|性别|年|齢|民族|病历号|病患类型|收费类型|样本类型|稀释|采样时间|送检时间|登记时间|送检科室|送检医生|检测时间|备注";
             //string maps = "UISelected|ShelfNumber|TubeNumber|SampleNo|BarCode|PatientName|PatientSex|PatientAge|PatientAgeType|Nation|RecordNo|PatientType|ChargeType|SampleType|DilutionMultiples|CollectTime|SendDate|RegisterDate|SendDepartment|SendtDoctor|SendDate|Note";
-            string[] colNames = cols.Split(new char[] { '|' });
-            string[] mapNames = maps.Split(new char[] { '|' });
+            string[] colNames = cols.Split(new char[] {'|'});
+            string[] mapNames = maps.Split(new char[] {'|'});
             Dictionary<string, string> GrideHeadList;
             if (colNames.Length == mapNames.Length)
             {

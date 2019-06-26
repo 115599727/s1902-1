@@ -11,3 +11,5 @@ D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureData
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureData.pdb
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureDataAccess.dll
 D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\UriMeasureDataAccess.pdb
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\PylonC.NET.dll
+D:\S1902软件项目\Develop\github\UriMeasureBussiness\bin\Debug\PylonC.NET.xml

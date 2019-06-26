@@ -25,7 +25,7 @@ namespace UIUriMeasure
             //throw new NotImplementedException();
 
             containerRegistry.RegisterForNavigation<RegistSample>();
-
+            containerRegistry.RegisterForNavigation<MeasureResult>();
         }
     }
 }

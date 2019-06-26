@@ -28,7 +28,7 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         /// <summary>
         /// 停止位的数目
         /// </summary>
-        public SerialPort StopBites { get; set; }
+        public int StopBites { get; set; }
 
         /// <summary>
         /// 数据位，DataBits

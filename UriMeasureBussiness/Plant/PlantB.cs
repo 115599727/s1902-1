@@ -1,4 +1,5 @@
 ﻿using Medicside.UriMeasure.Bussiness.Interface;
+using Medicside.UriMeasure.Data.UrineMeasure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,19 @@ namespace Medicside.UriMeasure.Bussiness.Plant
         /// </summary>
         public Equipment.MorphologyEquipment MorphologyEQU { get; set; }
 
+        public PlantB()
+        {
+            MorphologyEQU = new Equipment.MorphologyEquipment();
+            
 
+        }
+        internal override void Measure(SampleItem item)
+        {
+            
+            MorphologyEQU.Measure(item);
+        }
 
-
+       
 
 
 

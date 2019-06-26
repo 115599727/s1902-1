@@ -1,5 +1,6 @@
 ﻿using log4net;
 using Medicside.UriMeasure.Data;
+using Medicside.UriMeasure.Data.UrineMeasure;
 using Medicside.UriMeasure.DataAccess.DataHelper;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,10 @@ using System.Windows;
 
 namespace Medicside.UriMeasure.Bussiness.Plant
 {
-    public class PlantForm
+    public  class PlantForm
     {
-        
         static PlantForm plantForm;
         
-
-
         protected PlantForm() { }
 
         public static PlantForm Current
@@ -110,8 +108,24 @@ namespace Medicside.UriMeasure.Bussiness.Plant
             {
                 list = UrineTestDataHelper.GetChargeTypes();
             }
+            //送检科室
+            if (type == DictionaryDataType.UrineMeasureSendDepartment)
+            {
+                list = UrineTestDataHelper.GetSendDepartments();
+            }
+            //送检医生
+            if (type == DictionaryDataType.UrineMeasureSendDoctor)
+            {
+                list = UrineTestDataHelper.GetSendDoctors();
+            }
             return list;
 
+        }
+
+        //检测操作
+        internal virtual void Measure(SampleItem item)
+        {
+            
         }
 
 
@@ -123,12 +137,15 @@ namespace Medicside.UriMeasure.Bussiness.Plant
     /// </summary>
     public enum PlantMeasureType
     {
-
-        TypeAChemistry,TypeBMorphplogy,TypeABChemistryAndMorphplogy, TypeCchemistryAndMorphplogyAndAutoDisk
+        TypeAChemistry=100,TypeBMorphplogy=200,TypeABChemistryAndMorphplogy=300, TypeCchemistryAndMorphplogyAndAutoDisk=500
     }
     public enum DictionaryDataType
     {
         UrineMeasurePatientAgeType, UrineMeasurePatientType, UrineMeasurePatientNations, UrineMeasureChargeTypes
+            , UrineMeasureSendDepartment, UrineMeasureSendDoctor
 
     }
+
+    
+
 }

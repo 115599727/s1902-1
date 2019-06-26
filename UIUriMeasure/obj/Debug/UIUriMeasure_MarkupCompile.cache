@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 
-1-1655016158
+7947824538
 
-7-220447755
+14-904180549
 30-2112127952
-Views\RegistSample.xaml;
+Views\MeasureData.xaml;Views\MeasureResult.xaml;Views\MeasureResultEdit.xaml;Views\MeasureResultView.xaml;Views\MorphologyPicCell.xaml;Views\MorphologyPicLargePic.xaml;Views\RegistSample.xaml;
 
 False
 

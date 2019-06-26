@@ -8,12 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/about32.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/delete.largeimage.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/dingweice.largeimage.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/edit.largeimage.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/flag.largeimage.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/fuchace.largeimage.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/run.largeimage.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/cellpic.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/confirm.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/delresult.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/edit.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/find.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/lis.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/picbig.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/print.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/printn.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/result.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/shenhe.png")]
 
 

@@ -91,3 +91,17 @@ D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureData.dll
 D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureData.pdb
 D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureDataAccess.dll
 D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\UriMeasureDataAccess.pdb
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MeasureData.g.cs
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MeasureResult.g.cs
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MeasureResultEdit.g.cs
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MeasureResultView.g.cs
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MorphologyPicCell.g.cs
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MorphologyPicLargePic.g.cs
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MeasureData.baml
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MeasureResult.baml
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MeasureResultEdit.baml
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MeasureResultView.baml
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MorphologyPicCell.baml
+D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MorphologyPicLargePic.baml
+D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\PylonC.NET.dll
+D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\PylonC.NET.xml

@@ -21,6 +21,7 @@ namespace Medicside.UriMeasure.Data.Morphology
         /// 助记符
         /// </summary>
         public string Mnemonic { get; set; }
+        public int Index { get; set; }
 
         public decimal Value { get; set; }
 

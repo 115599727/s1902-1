@@ -94,7 +94,26 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="UIUriMeasureViewModule.cs" />
+    <Compile Include="ViewModels\MeasureResultViewModels.cs" />
     <Compile Include="ViewModels\RegistSampleViewModel.cs" />
+    <Compile Include="Views\MeasureData.xaml.cs">
+      <DependentUpon>MeasureData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MeasureResult.xaml.cs">
+      <DependentUpon>MeasureResult.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MeasureResultEdit.xaml.cs">
+      <DependentUpon>MeasureResultEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MeasureResultView.xaml.cs">
+      <DependentUpon>MeasureResultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MorphologyPicCell.xaml.cs">
+      <DependentUpon>MorphologyPicCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MorphologyPicLargePic.xaml.cs">
+      <DependentUpon>MorphologyPicLargePic.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RegistSample.xaml.cs">
       <DependentUpon>RegistSample.xaml</DependentUpon>
     </Compile>
@@ -114,6 +133,30 @@
     <None Include="Resources\Edit.LargeImage.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\MeasureData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MeasureResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MeasureResultEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MeasureResultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MorphologyPicCell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MorphologyPicLargePic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RegistSample.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,6 +189,31 @@
       <Project>{90AEFD70-21A3-4240-8591-042ACED2C342}</Project>
       <Name>UriMeasureData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cellpic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\confirm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\delresult.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Lis.png" />
+    <Resource Include="Resources\picBig.png" />
+    <Resource Include="Resources\print.png" />
+    <Resource Include="Resources\printCopys.png" />
+    <Resource Include="Resources\Result.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\shenhe.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

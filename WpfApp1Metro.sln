@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UriMeasureDataAccess", "Uri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UriMeasureData", "UriMeasureData\UriMeasureData.csproj", "{90AEFD70-21A3-4240-8591-042ACED2C342}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UriMeasureBussinessTests", "UriMeasureBussinessTests\UriMeasureBussinessTests.csproj", "{54EBC60B-16DA-4783-8A9C-27F93E06DB4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{90AEFD70-21A3-4240-8591-042ACED2C342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90AEFD70-21A3-4240-8591-042ACED2C342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90AEFD70-21A3-4240-8591-042ACED2C342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54EBC60B-16DA-4783-8A9C-27F93E06DB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54EBC60B-16DA-4783-8A9C-27F93E06DB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54EBC60B-16DA-4783-8A9C-27F93E06DB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54EBC60B-16DA-4783-8A9C-27F93E06DB4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

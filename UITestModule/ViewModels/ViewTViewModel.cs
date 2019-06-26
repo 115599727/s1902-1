@@ -4,13 +4,15 @@ using Prism.Mvvm;
 using Prism.Regions;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace UITestModule.ViewModels
 {
-    public class ViewTViewModel : BindableBase, INavigationAware
+    public class ViewTViewModel : BindableBase, INavigationAware, IDataErrorInfo
     {
 
         private string _demoText;
@@ -24,6 +26,35 @@ namespace UITestModule.ViewModels
             }
         }
         public DelegateCommand ExecuteDelegateCommand { get; private set; }
+
+
+        public string Error
+        {
+            get
+            {
+                return null;
+            }
+        }
+        [Range(0, 10000, ErrorMessage = "Age Error ")]
+        public int Age { get; set; }
+
+        public string this[string columnName]
+        {
+            get
+            {
+                var vc = new ValidationContext(this, null, null);
+                vc.MemberName = columnName;
+                var res = new List<ValidationResult>();
+                var result = Validator.TryValidateProperty(this.GetType().GetProperty(columnName).GetValue(this, null), vc, res);
+                if (res.Count > 0) { return string.Join(Environment.NewLine, res.Select(r => r.ErrorMessage).ToArray()); }
+                return string.Empty;
+
+
+            }
+        }
+
+
+
         public ViewTViewModel()
         {
             this._demoText = "Demo Text String";

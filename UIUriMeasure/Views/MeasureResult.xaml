@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="UIUriMeasure.Views.MeasureResult"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UIUriMeasure.Views"
+             xmlns:prism="http://prismlibrary.com/" 
+        prism:ViewModelLocator.AutoWireViewModel="True"    
+             xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml"
+             mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1000"
+      >
+    <UserControl.Resources>
+        <c1:C1ToolbarCommand x:Key="cmdFind"  LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.Find}" LargeImageSource="/Resources/Find.png" SmallImageSource="/Resources/Find.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdEditResult" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.EditResult}"     LargeImageSource="/Resources/Edit.png"   SmallImageSource="/Resources/Edit.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdDelResult" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.DelResult}" LargeImageSource="/Resources/delresult.png" SmallImageSource="/Resources/delresult.png"/>
+        <c1:C1ToolbarCommand x:Key="cmdCellView" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.CellView}" LargeImageSource="/Resources/cellpic.png" SmallImageSource="/Resources/cellpic.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdAllCellView" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.AllCellView}" LargeImageSource="/Resources/picBig.png" SmallImageSource="/Resources/picBig.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdConfirm" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.Confirm}" LargeImageSource="/Resources/confirm.png" SmallImageSource="/Resources/confirm.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdViewResult" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.ViewResult}" LargeImageSource="/Resources/result.png" SmallImageSource="/Resources/result.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdExamine" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.Examine}" LargeImageSource="/Resources/shenhe.png" SmallImageSource="/Resources/shenhe.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdLIS" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.LIS}" LargeImageSource="/Resources/Lis.png" SmallImageSource="/Resources/Lis.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdPrint" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.Print}" LargeImageSource="/Resources/print.png" SmallImageSource="/Resources/shenhe.png"  />
+        <c1:C1ToolbarCommand x:Key="cmdPrintCopys" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.PrintCopys}" LargeImageSource="/Resources/printCopys.png" SmallImageSource="/Resources/printCopys.png"  />
+        
+        <GridLength x:Key="GridRowHeight">30</GridLength>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <c1:C1Toolbar x:Name="toolBar"  FontSize="14" Grid.Row="0" Grid.Column="0" >
+            <c1:C1ToolbarGroup Header="查询">
+                <TextBlock Text="样本号："></TextBlock>
+                <TextBox Width="200" ></TextBox>
+                <c1:C1ToolbarButton Command="{StaticResource cmdFind}" IsEnabled="True" ></c1:C1ToolbarButton>
+            </c1:C1ToolbarGroup>
+            <c1:C1ToolbarGroup Header="分组">
+                <CheckBox x:Name="ckbSelectAll" Content="{StaticResource UiUriMeasure.MeasureResult.Toolbar.UnAudited}"       />
+                <CheckBox x:Name="ckbSelec" Content="{StaticResource UiUriMeasure.MeasureResult.Toolbar.Audited}"       />
+                <CheckBox x:Name="ckbSelel" Content="{StaticResource UiUriMeasure.MeasureResult.Toolbar.AllItems}"       />
+            </c1:C1ToolbarGroup>
+            <!--<c1:C1ToolbarButton Command="{StaticResource cmdSc}" IsEnabled="True" ></c1:C1ToolbarButton>-->
+            <c1:C1Separator />
+
+            <!--<c1:C1ToolbarButton Command="{StaticResource cmdEdit}" IsEnabled="True" ></c1:C1ToolbarButton>-->
+            
+            <c1:C1ToolbarButton Command="{StaticResource cmdDelResult}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdEditResult}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdCellView}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdAllCellView}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdConfirm}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdViewResult}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdExamine}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdLIS}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdPrint}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdPrintCopys}" IsEnabled="True" ></c1:C1ToolbarButton>
+        </c1:C1Toolbar>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <c1:C1FlexGrid x:Name="flexGridSamples" Grid.Column="0" />
+            <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
+            <c1:C1FlexGrid x:Name="flexGridResults" Grid.Column="2" />
+            <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" />
+        </Grid>
+
+    </Grid>
+</UserControl>

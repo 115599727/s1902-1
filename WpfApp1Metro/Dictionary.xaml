@@ -32,7 +32,15 @@
     <sys:String x:Key="Ribbon.Action.SampleRigister">样本登记</sys:String>
     <sys:String x:Key="Ribbon.Action.MeasureResult">检验结果</sys:String>
     <sys:String x:Key="Ribbon.Action.ViewT">测试功能</sys:String>
-    <sys:String x:Key="Ribbon.Menu.Setting">配置</sys:String>
+    <sys:String x:Key="Ribbon.Menu.Setting">配置管理</sys:String>
+    <sys:String x:Key="Ribbon.Menu.EquipmentSetting">仪器配置</sys:String>
+    <sys:String x:Key="Ribbon.Menu.MeasureTypeSetting">检测项目配置</sys:String>
+    <sys:String x:Key="Ribbon.Menu.MORMeasureTypeSetting">形态学检测项目配置</sys:String>
+    <sys:String x:Key="Ribbon.Menu.CHEMeasureTypeSetting">干化学检测项目配置</sys:String>
+    <sys:String x:Key="Ribbon.Menu.QCTypeSetting">质控条件配置</sys:String>
+    <sys:String x:Key="Ribbon.Menu.RCTypeSetting">复查条件配置</sys:String>
+    
+    <sys:String x:Key="Ribbon.Menu.CHMeasureTypeSetting">配置</sys:String>
     <sys:String x:Key="Ribbon.Menu.Exit">退出</sys:String>
 
     <sys:String x:Key="UiUriMeasure.Register.Toolbar.Delete">删除</sys:String>
@@ -42,9 +50,34 @@
     <sys:String x:Key="UiUriMeasure.Register.Toolbar.TestA">急诊测试</sys:String>
     <sys:String x:Key="UiUriMeasure.Register.Toolbar.TestR">复查测试</sys:String>
     <sys:String x:Key="UiUriMeasure.Register.Toolbar.SelectAll">全选</sys:String>
+
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.Find">查询</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.Audited">已审核</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.UnAudited">未审核</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.AllItems">全部项</sys:String>
+    
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.EditResult">编辑结果</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.CellView">细胞图</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.AllCellView">聚合图</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.Confirm">确认</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.ViewResult">查看结果</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.Examine">审核</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.LIS">LIS导出</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.Print">打印</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.PrintCopys">批量打印</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.Toolbar.DelResult">删除结果</sys:String>
+    
     
     <!--列明定义-->
     <sys:String x:Key="UiUriMeasure.RegisterSample.SamplelistHead">选择|架号|管号|样本编号|测试项|条码号|病患名字|性别|年|齢|民族|病历号|病患类型|收费类型|样本类型|稀释|采样时间|送检时间|登记时间|送检科室|送检医生|检测时间|备注</sys:String>
     <sys:String x:Key="UiUriMeasure.RegisterSample.SamplelistMap">UISelected|ShelfNumber|TubeNumber|SampleNo|TestType|BarCode|PatientName|PatientSex|PatientAge|PatientAgeType|Nation|RecordNo|PatientType|ChargeType|SampleType|DilutionMultiples|CollectTime|SendDate|RegisterDate|SendDepartment|SendtDoctor|TestDate|Note</sys:String>
-    
+
+    <sys:String x:Key="UiUriMeasure.MeasureResult.SamplelistHead">选择|架号|管号|样本编号|条码号|病患名字|类型|稀释|审核|复查|回顾</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.SamplelistMap">UISelected|ShelfNumber|TubeNumber|SampleNo|BarCode|PatientName|SampleType|DilutionMultiples|IsAudit|IsPrint|IsReview</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.ResultlistHead">检测分类|类型|项目名称|结果|复查结果|异常|参考值|单位|人工编辑</sys:String>
+    <sys:String x:Key="UiUriMeasure.MeasureResult.ResultlistMap">TestType|ResultType|ResultName|Result|LastResult|Abnormal|Reference|ItemUnit|Edit</sys:String>
+
+
+
+
 </ResourceDictionary>

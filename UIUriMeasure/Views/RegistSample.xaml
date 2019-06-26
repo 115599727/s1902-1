@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:UIUriMeasure.Views"
         xmlns:prism="http://prismlibrary.com/" 
         prism:ViewModelLocator.AutoWireViewModel="True"    
-    xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" 
-    x:Class="UIUriMeasure.Views.RegistSample"
+        xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml" 
+        x:Class="UIUriMeasure.Views.RegistSample"
         mc:Ignorable="d" MinHeight="690" MinWidth="550" FontSize="15" Loaded="UserControl_Loaded"
         >
     <UserControl.Resources>
@@ -33,14 +33,14 @@
 
         <c1:C1Toolbar x:Name="toolBar"  FontSize="14" Grid.Row="0" Grid.Column="0" >
             <CheckBox x:Name="ckbSelectAll" Content="{StaticResource UiUriMeasure.Register.Toolbar.SelectAll}"  Click="CkbSelectAll_Click"     />
-            <c1:C1ToolbarButton Command="{StaticResource cmdDel}" IsEnabled="True" >            </c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdDel}" IsEnabled="True" ></c1:C1ToolbarButton>
             <c1:C1Separator />
 
-            <c1:C1ToolbarButton Command="{StaticResource cmdEdit}" IsEnabled="True" >            </c1:C1ToolbarButton>
-            <c1:C1ToolbarButton Command="{StaticResource cmdTest}" IsEnabled="True" >            </c1:C1ToolbarButton>
-            <c1:C1ToolbarButton Command="{StaticResource cmdTestP}" IsEnabled="True" >            </c1:C1ToolbarButton>
-            <c1:C1ToolbarButton Command="{StaticResource cmdTestF}" IsEnabled="True" >            </c1:C1ToolbarButton>
-            <c1:C1ToolbarButton Command="{StaticResource cmdTestA}" IsEnabled="True" >            </c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdEdit}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdTest}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdTestP}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdTestF}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdTestA}" IsEnabled="True" ></c1:C1ToolbarButton>
         </c1:C1Toolbar>
         <c1:C1FlexGrid x:Name="flexGrid" FontSize="16" Grid.Row="1" Grid.Column="0" SelectedItemChanged="FlexGrid_SelectedItemChanged" ></c1:C1FlexGrid>
         <c1:C1TabControl Grid.Column="1" Grid.RowSpan="2" FontSize="16">
@@ -59,25 +59,28 @@
                             <ColumnDefinition Width="40*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="样本号："   FontWeight="Bold" Grid.Row="0" Grid.Column="0" />
-                        <c1:C1MaskedTextBox  Name="maskedTextBox" HorizontalAlignment="Left"  Mask="9999" Width="80" Watermark="四位数字" Grid.Row="0" Grid.Column="1"/>
+                        <c1:C1MaskedTextBox  x:Name="mskTSampleNo" HorizontalAlignment="Left"  Mask="9999" Width="80" Watermark="四位数字" Grid.Row="0" Grid.Column="1" Text="{Binding Path=PpSampleNo, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True,NotifyOnValidationError=True}"
+                               ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"              
+                                             />
 
                         <TextBlock Text="测试项：" Margin="2"  FontWeight="Bold" Grid.Row="1" Grid.Column="0" />
-                       
+
                         <StackPanel Orientation="Horizontal"  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"  >
                             <RadioButton x:Name="rdbTypeC"   Content="干化学" IsChecked="True" Margin="2"></RadioButton>
                             <RadioButton x:Name="rdbTypeM"  Content="形态学" Margin="2" ></RadioButton>
                             <RadioButton x:Name="rdbTypeCM"  Content="干化学+形态学"  Margin="2"></RadioButton>
-                            
+
                         </StackPanel>
-                        <TextBlock Text="稀释倍数：" Margin="2" FontWeight="Bold" Grid.Row="2" Grid.Column="0" />
-                        <c1:C1ComboBox x:Name="cbxXsbs" HorizontalAlignment="Left" Width="130" VerticalAlignment="Center" DropDownHeight="100" Grid.Row="2" Grid.Column="1" AutoComplete="True" />
+                        <TextBlock  Text="稀释倍数：" Margin="2" FontWeight="Bold" Grid.Row="2" Grid.Column="0" />
+                        <ComboBox x:Name="cbxDilution" ItemsSource="{ Binding Path=DilutionCollectionView }" DisplayMemberPath="Mnemonic" SelectedValuePath="Mnemonic"  HorizontalAlignment="Left" Width="130" VerticalAlignment="Center"  Grid.Row="2" Grid.Column="1"  />
+                        <!--<c1:C1ComboBox x:Name="cbxDilution" DataContext="{Binding Path=DilutionCollectionView }" DisplayMemberPath="Mnemonic" SelectedValuePath="Mnemonic"  HorizontalAlignment="Left" Width="130" VerticalAlignment="Center" DropDownHeight="100" Grid.Row="2" Grid.Column="1" AutoComplete="True" />-->
 
                         <TextBlock Text="管号 | 架号：" FontWeight="Bold" Grid.Row="3" Grid.Column="0" />
                         <StackPanel Orientation="Horizontal"  Grid.Row="3" Grid.Column="1" >
-                            <c1:C1MaskedTextBox Margin="2" Name="mtbGh" Width="50" Mask="99" Watermark="管号" />
-                            <c1:C1MaskedTextBox Margin="2" Name="mtbJh" Width="50"  Mask="99" Watermark="架号" />
+                            <c1:C1MaskedTextBox x:Name="mskTTubeNo" Margin="2"  Width="50" Mask="99" Watermark="管号" />
+                            <c1:C1MaskedTextBox x:Name="mskTShelfNo"  Width="50"  Mask="99" Watermark="架号" />
                         </StackPanel>
-                        
+
                     </Grid>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -101,18 +104,18 @@
                             <ColumnDefinition Width="40*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
                         <Border BorderBrush="#FF37ADE7" BorderThickness="2" Grid.RowSpan="4" Grid.Column="2">
-                            <Image  Width="50" Height="80"  Source="pack://application:,,,/UIUriMeasure;Component/Resources/about32.png" Margin="5" />
+                            <Image x:Name="imgPatient"  Width="50" Height="80"  Source="pack://application:,,,/UIUriMeasure;Component/Resources/about32.png" Margin="5" />
                         </Border>
                         <TextBlock  Margin="2"  Text="病患姓名："   FontWeight="Bold" Grid.Row="0" Grid.Column="0" />
-                        <TextBox Margin="2" Grid.Row="0" Grid.Column="1" ></TextBox>
+                        <TextBox x:Name="txtPatienName" Margin="2" Grid.Row="0" Grid.Column="1" ></TextBox>
                         <TextBlock Margin="2"  Text="性别："   FontWeight="Bold" Grid.Row="1" Grid.Column="0" />
                         <StackPanel Orientation="Horizontal"  Grid.Row="1" Grid.Column="1" >
-                            <RadioButton   Content="男" IsChecked="True"></RadioButton>
-                            <RadioButton   Content="女" ></RadioButton>
+                            <RadioButton x:Name="rdbSexM"  Content="男" IsChecked="True"></RadioButton>
+                            <RadioButton x:Name="rdbSexF"  Content="女" ></RadioButton>
                         </StackPanel>
                         <TextBlock   Text="年龄："   FontWeight="Bold" Grid.Row="2" Grid.Column="0" />
                         <StackPanel Orientation="Horizontal"  Grid.Row="2" Grid.Column="1" >
-                            <c1:C1NumericBox Margin="2"  Value="50"  />
+                            <c1:C1NumericBox x:Name="nmbPatientAge" Margin="2"  Value="50"  Minimum="0" Maximum="120" />
                             <c1:C1ComboBox x:Name="cobAgeType"  Margin="2" />
                         </StackPanel>
                         <TextBlock   Text="民族："   FontWeight="Bold" Grid.Row="3" Grid.Column="0" />
@@ -132,17 +135,17 @@
                         <TextBlock   Text="登记时间："   FontWeight="Bold" Grid.Row="9" Grid.Column="0" />
                         <c1:C1DatePicker x:Name="cdpRegistDate"  Grid.Row="9" Grid.Column="1" Margin="2" ></c1:C1DatePicker>
                         <TextBlock   Text="送检科室："   FontWeight="Bold" Grid.Row="10" Grid.Column="0" />
-                        <c1:C1ComboBox Margin="2"  Grid.Row="10" Grid.Column="1"/>
-                        <TextBlock   Text="送检医生："   FontWeight="Bold" Grid.Row="11" Grid.Column="0" />
-                        <c1:C1ComboBox Margin="2"  Grid.Row="11" Grid.Column="1"/>
+                        <ComboBox x:Name="cboSent" ItemsSource="{Binding Path=SendDepartmentsCollectionView}" DisplayMemberPath="Value" SelectedValuePath="Id" Margin="2"  Grid.Row="10" Grid.Column="1"/>
+                        <TextBlock   Text="送检医生："    FontWeight="Bold" Grid.Row="11" Grid.Column="0" />
+                        <ComboBox Margin="2" ItemsSource="{Binding Path=SendDoctorsCollectionView}" DisplayMemberPath="Value" SelectedValuePath="Id" Grid.Row="11" Grid.Column="1"/>
                         <TextBlock   Text="备注："    FontWeight="Bold" Grid.Row="12" Grid.Column="0" />
                         <TextBox  Margin="2" Height="50"  Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2"  TextWrapping="Wrap"  AcceptsReturn="True" />
 
 
                     </Grid>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="btnRegistSample" Command="" Content="新建" Width="120" Height="40" Margin="5" ></Button>
-                        <Button x:Name="btnSave" Content="保存" Width="120" Height="40" Margin="5" ></Button>
+                        <Button x:Name="btnRegistSample" Command="" Content="新建" Width="120" Height="40" Margin="5" Click="BtnRegistSample_Click" ></Button>
+                        <Button x:Name="btnSave" Content="保存" Width="120" Height="40" Margin="5" Click="BtnSave_Click" ></Button>
                     </StackPanel>
                     <Button Content="扫码登记" Height="40" Margin="5" ></Button>
                 </StackPanel>

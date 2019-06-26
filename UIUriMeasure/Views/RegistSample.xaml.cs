@@ -13,6 +13,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -40,6 +41,7 @@ namespace UIUriMeasure.Views
         {
             RegistSampleBiz = new RegistSampleBiz();
             InitializeComponent();
+
             foreach (var key in Resources.Keys)
             {
                 var cmd = Resources[key] as C1ToolbarCommand;
@@ -68,16 +70,20 @@ namespace UIUriMeasure.Views
             cobPatientNation.SelectedValuePath = "ID";
             cobPatientNation.SelectedIndex = 0;
 
+            //支付类型
             SetCombox(cobChargeTypes, DictionaryDataType.UrineMeasureChargeTypes);
 
             if(PlantForm.Current is PlantA)
-            { rdbTypeM.Visibility = Visibility.Collapsed;
-                rdbTypeCM.Visibility = Visibility.Hidden;   
+            {
+                rdbTypeM.Visibility = Visibility.Collapsed;
+                rdbTypeCM.Visibility = Visibility.Hidden;
+                rdbTypeC.IsChecked = true;
             }
             if (PlantForm.Current is PlantB)
             {
                 rdbTypeC.Visibility = Visibility.Collapsed;
                 rdbTypeCM.Visibility = Visibility.Collapsed;
+                rdbTypeM.IsChecked = true;
             }
 
             var DateTimeFormatString=PlantForm.Current.DateTimeFormatString;
@@ -116,15 +122,8 @@ namespace UIUriMeasure.Views
         }
         private void Execute(string CmdName)
         {
-            //执行检测
-            if (CmdName.Equals("cmdTest"))
-            {
-                PlantForm.Log.Info(Application.Current.Resources["UiUriMeasure.Register.Toolbar.Test"].ToString());
-                //跳转到labelTitle == Resources["UiUriMeasure.Register.Toolbar.Test"].ToString()
-                //var para = new NavigationParameters("Uri=ContactMainWindowView&Param=hello saylor");
-                ServiceLocator.Current.GetInstance<IRegionManager>().RequestNavigate("ContentRegion", "ViewT");
-                return;
-            }
+            
+            
             if (CmdName.Equals("cmdDel"))
             {
 
@@ -138,8 +137,31 @@ namespace UIUriMeasure.Views
                 }
 
             }
-            MessageBox.Show(CmdName + "clicked ");
 
+            //执行检测
+            if (CmdName.Equals("cmdTest"))
+            {
+
+                //foreach (var item in GridData)
+                //{
+
+                //    RegistSampleBiz.Measure(item);
+                   
+                //}
+
+                GridData.Clear();
+
+
+                PlantForm.Log.Info(Application.Current.Resources["UiUriMeasure.Register.Toolbar.Test"].ToString());
+                //跳转到labelTitle == Resources["UiUriMeasure.Register.Toolbar.Test"].ToString()
+                //var para = new NavigationParameters("Uri=ContactMainWindowView&Param=hello saylor");
+                //async
+
+                ServiceLocator.Current.GetInstance<IRegionManager>().RequestNavigate("ContentRegion", "MeasureResult");
+                return;
+
+
+            }
         }
         private void FlexGrid_Initialized(object sender, EventArgs e)
         {
@@ -189,7 +211,7 @@ namespace UIUriMeasure.Views
         {
             var selitem = (SampleItem)flexGrid.SelectedItem;
             DisplayItem(selitem);
-            MessageBox.Show(selitem.ID.ToString());
+         //   MessageBox.Show(selitem.ID.ToString());
         }
 
         private void DisplayItem(SampleItem selitem)
@@ -197,5 +219,20 @@ namespace UIUriMeasure.Views
             this.cdpCollectTime.SelectedDate = selitem.CollectTime;
 
         }
+
+        private void BtnRegistSample_Click(object sender, RoutedEventArgs e)
+        {
+          
+
+        }
+
+        private void BtnSave_Click(object sender, RoutedEventArgs e)
+        {
+              SampleItem sitem = new SampleItem();
+            sitem.CollectTime = DateTime.Now;
+            this.GridData.Add(sitem);
+        }
+
+        
     }
 }

@@ -8,8 +8,11 @@ namespace Medicside.UriMeasure.Bussiness.Interface
 {
     public interface IChimneyMeasure
     {
+
         Dictionary<string, string> Measure(object Sample);
+
         Dictionary<string, string> EmergencyCall(object Sample);
+
         Dictionary<string, string> LocationMeasure(object Sample);
     }
 }

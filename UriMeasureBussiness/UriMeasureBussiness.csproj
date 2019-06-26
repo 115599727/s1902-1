@@ -35,8 +35,10 @@
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
+    <Reference Include="PylonC.NET, Version=4.2.0.0, Culture=neutral, PublicKeyToken=a77e8471c5919d5a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,9 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera\BalserA1440OverlappedGrab.cs" />
+    <Compile Include="Camera\BitmapFactory.cs" />
+    <Compile Include="Camera\IGrabImage.cs" />
+    <Compile Include="Camera\ShotImage.cs" />
     <Compile Include="Equipment\ChimneyEquipmt.cs" />
     <Compile Include="Equipment\Equipment.cs" />
     <Compile Include="Equipment\MorphologyEquipment.cs" />
+    <Compile Include="Equipment\PortControlHelper.cs" />
     <Compile Include="Equipment\PortNetWork.cs" />
     <Compile Include="Equipment\PortRS232.cs" />
     <Compile Include="Equipment\RecyclediskEquipment.cs" />
@@ -64,6 +71,7 @@
     <Compile Include="Plant\PlantForm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BuissinessBase.cs" />
+    <Compile Include="UriMeasure\MeasureResultBiz.cs" />
     <Compile Include="UriMeasure\RegistSampleBiz.cs" />
   </ItemGroup>
   <ItemGroup>

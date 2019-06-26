@@ -15,5 +15,7 @@ namespace Medicside.UriMeasure.Bussiness.Interface
         /// <returns></returns>
         Dictionary<string, string> Measure(object sample);
 
+
+
     }
 }

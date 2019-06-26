@@ -53,10 +53,10 @@
                     <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
                     <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
                     <RibbonSeparator />
-                    
-                    <RibbonApplicationSplitMenuItem Header="{DynamicResource Ribbon.Menu.Setting}">
-                        <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
-                        <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.Setting}" />
+
+                    <RibbonApplicationSplitMenuItem Header="{DynamicResource Ribbon.Menu.EquipmentSetting}">
+                        <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.CHEMeasureTypeSetting}" />
+                        <RibbonApplicationMenuItem Header="{DynamicResource Ribbon.Menu.CHEMeasureTypeSetting}" />
                     </RibbonApplicationSplitMenuItem>
                     
                     <RibbonSeparator />

@@ -24,7 +24,6 @@
                 <Setter Property="TextBox.Height" Value="25" />
                 <Setter Property="Control.Height" Value="25" />
                 
-                
             </Style>
             
             

@@ -1,5 +1,4 @@
 ﻿using Medicside.UriMeasure.Data;
-using Medicside.UriMeasure.Data.DataHelper;
 using Medicside.UriMeasure.Data.Morphology;
 using Medicside.UriMeasure.Data.UrineMeasure;
 using System;
@@ -182,9 +181,6 @@ namespace Medicside.UriMeasure.DataAccess.DataHelper
 
             }
 
-
-
-
             return list;
 
         }
@@ -317,5 +313,40 @@ namespace Medicside.UriMeasure.DataAccess.DataHelper
             return list;
 
         }
+
+
+
+        /// <summary>
+        /// 获取送检部门
+        /// </summary>
+        /// <returns></returns>
+        public static List<DictionaryItem> GetSendDepartments()
+        {
+            List<DictionaryItem> list = new List<DictionaryItem>();
+
+            list.Add(new DictionaryItem(1, "消化科", "h"));
+            list.Add(new DictionaryItem(2, "内分泌", "c"));
+            list.Add(new DictionaryItem(3, "内科", "h"));
+            
+            return list;
+        }
+
+        /// <summary>
+        /// 获取送检部门
+        /// </summary>
+        /// <returns></returns>
+        public static List<DictionaryItem> GetSendDoctors()
+        {
+            List<DictionaryItem> list = new List<DictionaryItem>();
+
+            list.Add(new DictionaryItem(1, "张医生3", "h"));
+            list.Add(new DictionaryItem(2, "李医生", "c"));
+            list.Add(new DictionaryItem(3, "王医生", "h"));
+
+            return list;
+        }
+
+
+
     }
 }
