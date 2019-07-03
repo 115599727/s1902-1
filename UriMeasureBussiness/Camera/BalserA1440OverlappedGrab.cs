@@ -342,8 +342,8 @@ namespace Medicside.UriMeasure.Bussiness.Camera
                 Pylon.DestroyDevice(hDev);
                 //SaveImage();
                 Console.Error.WriteLine(ResultList.Capacity + "/" + ResultList.Count);
-                Console.Error.WriteLine("\nPress enter to exit.1");
-                Console.ReadLine();
+                //Console.Error.WriteLine("\nPress enter to exit.1");
+                //Console.ReadLine();
 
                 /* ... Shut down the pylon runtime system. Don't call any pylon method after
                    calling Pylon.Terminate(). */
