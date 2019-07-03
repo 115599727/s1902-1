@@ -16,7 +16,8 @@ namespace Medicside.UriMeasure.Bussiness.UriMeasure
         public readonly String GridResultlistMap = "UiUriMeasure.MeasureResult.ResultlistMap";
 
 
-        List<UrineTestResult> listSamples;
+        //List<UrineTestResult> UrineTestResult;
+
         public Dictionary<string, string> SampleGrideHeadList;
         public Dictionary<string, string> ResultGrideHeadList;
         public MeasureResultBiz()
@@ -48,7 +49,7 @@ namespace Medicside.UriMeasure.Bussiness.UriMeasure
         {
             get
             {
-                return GetGridConfigString(GridResultlistHead);
+                return GetGridConfigString(GridResultlistMap);
 
             }
         }
@@ -59,6 +60,24 @@ namespace Medicside.UriMeasure.Bussiness.UriMeasure
                 return GetGridConfigString(GridResultlistHead);
 
             }
+        }
+
+        public List<UrineTestResult> GetUrineTestResult()
+        {
+            List<UrineTestResult> results = DataAccess.DataHelper.UrineTestDataHelper.GetUrineTestResults();
+            return results;
+
+        }
+        public List<UrineTestResultItem> GetUrineTestResultItems()
+        {
+            List<UrineTestResultItem> results = DataAccess.DataHelper.UrineTestDataHelper.GetUrineTestResultItems();
+            return results;
+
+        }
+        public int DeleteResult(UrineTestResult result)
+        {
+
+            return 0;
         }
     }
 }

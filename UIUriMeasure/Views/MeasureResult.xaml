@@ -8,7 +8,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True"    
              xmlns:c1="http://schemas.componentone.com/winfx/2006/xaml"
              mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="1000"
+      d:DesignHeight="650" d:DesignWidth="1000" Loaded="UserControl_Loaded"
       >
     <UserControl.Resources>
         <c1:C1ToolbarCommand x:Key="cmdFind"  LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.Find}" LargeImageSource="/Resources/Find.png" SmallImageSource="/Resources/Find.png"  />
@@ -21,17 +21,21 @@
         <c1:C1ToolbarCommand x:Key="cmdExamine" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.Examine}" LargeImageSource="/Resources/shenhe.png" SmallImageSource="/Resources/shenhe.png"  />
         <c1:C1ToolbarCommand x:Key="cmdLIS" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.LIS}" LargeImageSource="/Resources/Lis.png" SmallImageSource="/Resources/Lis.png"  />
         <c1:C1ToolbarCommand x:Key="cmdPrint" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.Print}" LargeImageSource="/Resources/print.png" SmallImageSource="/Resources/shenhe.png"  />
-        <c1:C1ToolbarCommand x:Key="cmdPrintCopys" LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.PrintCopys}" LargeImageSource="/Resources/printCopys.png" SmallImageSource="/Resources/printCopys.png"  />
-        
+        <c1:C1ToolbarCommand x:Key="cmdPrintCopys"  LabelTitle="{StaticResource UiUriMeasure.MeasureResult.Toolbar.PrintCopys}" LargeImageSource="/Resources/printCopys.png" SmallImageSource="/Resources/printCopys.png"  />
+
         <GridLength x:Key="GridRowHeight">30</GridLength>
     </UserControl.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="921*"/>
+            <ColumnDefinition Width="79*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <c1:C1Toolbar x:Name="toolBar"  FontSize="14" Grid.Row="0" Grid.Column="0" >
+        <c1:C1Toolbar x:Name="toolBar"  FontSize="14" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
             <c1:C1ToolbarGroup Header="查询">
                 <TextBlock Text="样本号："></TextBlock>
                 <TextBox Width="200" ></TextBox>
@@ -46,19 +50,19 @@
             <c1:C1Separator />
 
             <!--<c1:C1ToolbarButton Command="{StaticResource cmdEdit}" IsEnabled="True" ></c1:C1ToolbarButton>-->
-            
-            <c1:C1ToolbarButton Command="{StaticResource cmdDelResult}" IsEnabled="True" ></c1:C1ToolbarButton>
+
+            <c1:C1ToolbarButton Command="{StaticResource cmdDelResult}" IsEnabled="{Binding CanExecute}" ></c1:C1ToolbarButton>
             <c1:C1ToolbarButton Command="{StaticResource cmdEditResult}" IsEnabled="True" ></c1:C1ToolbarButton>
             <c1:C1ToolbarButton Command="{StaticResource cmdCellView}" IsEnabled="True" ></c1:C1ToolbarButton>
             <c1:C1ToolbarButton Command="{StaticResource cmdAllCellView}" IsEnabled="True" ></c1:C1ToolbarButton>
-            <c1:C1ToolbarButton Command="{StaticResource cmdConfirm}" IsEnabled="True" ></c1:C1ToolbarButton>
+            <c1:C1ToolbarButton Command="{StaticResource cmdConfirm}" IsEnabled="True" Visibility="Collapsed" ></c1:C1ToolbarButton>
             <c1:C1ToolbarButton Command="{StaticResource cmdViewResult}" IsEnabled="True" ></c1:C1ToolbarButton>
             <c1:C1ToolbarButton Command="{StaticResource cmdExamine}" IsEnabled="True" ></c1:C1ToolbarButton>
             <c1:C1ToolbarButton Command="{StaticResource cmdLIS}" IsEnabled="True" ></c1:C1ToolbarButton>
             <c1:C1ToolbarButton Command="{StaticResource cmdPrint}" IsEnabled="True" ></c1:C1ToolbarButton>
             <c1:C1ToolbarButton Command="{StaticResource cmdPrintCopys}" IsEnabled="True" ></c1:C1ToolbarButton>
         </c1:C1Toolbar>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="5" />
@@ -66,10 +70,72 @@
                 <ColumnDefinition Width="5" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <c1:C1FlexGrid x:Name="flexGridSamples" Grid.Column="0" />
+            <c1:C1FlexGrid x:Name="flexGridSamples" Grid.Column="0" SelectedItemChanged="FlexGridSamples_SelectedItemChanged"   >
+                
+                
+            </c1:C1FlexGrid>
             <GridSplitter Grid.Column="1" Width="5" HorizontalAlignment="Stretch" />
             <c1:C1FlexGrid x:Name="flexGridResults" Grid.Column="2" />
             <GridSplitter Grid.Column="3" Width="5" HorizontalAlignment="Stretch" />
+            <Grid Grid.Column="4" Background="White" Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="4">
+                    
+                </Image>
+                
+                   
+                    <TextBlock Text="姓名：" Grid.Row="0" Grid.Column="2"/>                    
+                    <TextBlock Text="性别：" Grid.Row="1" Grid.Column="2"/>
+                    <TextBlock Text="民族：" Grid.Row="2" Grid.Column="2"/>
+                    <TextBlock Text="年龄：" Grid.Row="3" Grid.Column="2"/>
+                <TextBlock Text="样本号：" Grid.Row="4" Grid.Column="0"/>
+                <TextBlock Text="架号：" Grid.Row="5" Grid.Column="0"/>
+                <TextBlock Text="管号：" Grid.Row="5" Grid.Column="2"/>
+                <TextBlock Text="患者类型：" Grid.Row="6" Grid.Column="0"/>
+                <TextBlock Text="送检科室：" Grid.Row="7" Grid.Column="0"/>
+                <TextBlock Text="送检时间：" Grid.Row="8" Grid.Column="0"/>
+                <TextBlock Text="稀释倍数：" Grid.Row="9" Grid.Column="0"/>
+
+
+                <TextBlock x:Name="txtPaintName"  Grid.Row="0" Grid.Column="3"   />
+                <TextBlock x:Name="txtPaintSex"   Grid.Row="1" Grid.Column="3"   />
+                <TextBlock x:Name="txtPaintNation"   Grid.Row="2" Grid.Column="3"   />
+                <TextBlock x:Name="txtPaintAge"   Grid.Row="3" Grid.Column="3"   />
+                <TextBlock x:Name="txtSampleNo"   Grid.Row="4" Grid.Column="1"   />
+                <TextBlock x:Name="txtTubeNumber"   Grid.Row="5" Grid.Column="3"   />
+                <TextBlock x:Name="txtShelfNumber"   Grid.Row="5" Grid.Column="1"   />
+                <TextBlock x:Name="txtPaintType"   Grid.Row="6" Grid.Column="3"   />
+                <TextBlock x:Name="txtSendDepartment"   Grid.Row="7" Grid.Column="3"   />
+                <TextBlock x:Name="txtDilution"    Grid.Row="8" Grid.Column="3"   />
+                
+                
+                
+                <StackPanel Orientation="Horizontal"></StackPanel>
+            </Grid>
         </Grid>
 
     </Grid>

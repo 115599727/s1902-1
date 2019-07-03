@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Medicside.UriMeasure.Data.UrineMeasure;
+using Prism.Regions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +20,29 @@ namespace UIUriMeasure.Views
     /// <summary>
     /// MeasureResultEdit.xaml 的交互逻辑
     /// </summary>
-    public partial class MeasureResultEdit : UserControl
+    public partial class MeasureResultEdit : UserControl,INavigationAware
     {
         public MeasureResultEdit()
         {
             InitializeComponent();
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+           
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            var result = navigationContext.Parameters["result"] as UrineTestResult;
+            Console.WriteLine(result.SampleNo);
+            //throw new NotImplementedException();
         }
     }
 }

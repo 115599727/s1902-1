@@ -15,6 +15,7 @@ namespace Medicside.UriMeasure.Bussiness.Equipment.Tests
         [TestMethod()]
         public void MeasureTest()
         {
+            ///尿检测操作
             MorphologyEquipment me = new MorphologyEquipment();
 
             Dictionary<string, string> list = me.Measure(null);
@@ -27,6 +28,63 @@ namespace Medicside.UriMeasure.Bussiness.Equipment.Tests
         {
             MorphologyEquipment me = new MorphologyEquipment();
             me.SendShot();
+        }
+
+        [TestMethod()]
+        public void CameraConnctionTestTest()
+        {
+            MorphologyEquipment me = new MorphologyEquipment();
+            Assert.IsTrue(me.CameraConnctionTest());
+        }
+
+        [TestMethod()]
+        public void EquipmentPortIsConnectedTest()
+        {
+            MorphologyEquipment me = new MorphologyEquipment();
+            Assert.IsTrue(me.EquipmentPortIsConnected());
+        }
+
+        [TestMethod()]
+        public void EquipmentAdjectGrayLeveTest()
+        {
+            MorphologyEquipment me = new MorphologyEquipment();
+            Assert.IsTrue(me.EquipmentAdjectGrayLeve());
+        }
+        MorphologyEquipment me = new MorphologyEquipment();
+        [TestMethod()]
+        public void CheckResultTest()
+        {
+
+            Assert.IsTrue(me.CheckResult());
+
+        }
+
+        [TestMethod()]
+        public void GetFlashVTest()
+        {
+            var t = me.FlashGetVol();
+            Assert.IsTrue(t == 2222);
+        }
+
+        [TestMethod()]
+        public void FlashAddVolTest()
+        {
+            bool r = me.FlashAddVol(42);
+            Assert.IsTrue(r);
+        }
+
+        [TestMethod()]
+        public void FlashDecVolTest()
+        {
+            bool r = me.FlashDecVol(42);
+            Assert.IsTrue(r);
+        }
+
+        [TestMethod()]
+        public void FlashSetVolTest()
+        {
+            bool r = me.FlashSetVol(2222);
+            Assert.IsTrue(r);
         }
     }
 }

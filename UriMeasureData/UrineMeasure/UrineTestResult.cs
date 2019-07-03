@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Medicside.UriMeasure.Data.UrineMeasure
     /// <summary>
     /// 尿检结果
     /// </summary>
-    public class UrineTestResult
+    public class UrineTestResult : INotifyPropertyChanged
     {
 
         public int ID { get; set; }
@@ -128,7 +129,16 @@ namespace Medicside.UriMeasure.Data.UrineMeasure
         /// <summary>
         /// 界面复选选择项
         /// </summary>
-        public bool UISelected { get; set; }
+        private bool uiSelected;
+        public bool UISelected
+        {
+            get { return uiSelected; }
+            set
+            {
+                uiSelected = value;
+                NotifyPropertyChange("UISelected");
+            }
+        }
 
         /// <summary>
         /// 条码号
@@ -151,6 +161,16 @@ namespace Medicside.UriMeasure.Data.UrineMeasure
 
 
         public List<UrineTestResultItem> MphResult { get; set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChange(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                //根据PropertyChanged事件的委托类，实现PropertyChanged事件：
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
     }
 }

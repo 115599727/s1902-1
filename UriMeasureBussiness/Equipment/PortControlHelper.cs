@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Medicside.UriMeasure.Bussiness.Equipment
 {
-    class PortControlHelper
+  public  class PortControlHelper
     {
         #region 字段/属性/委托
         /// <summary>
@@ -67,6 +67,10 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         /// <param name="timeout">超时时间</param>
         public void OpenPort(string portName, int boudRate = 115200, int dataBit = 8, int stopBit = 1, int timeout = 5000)
         {
+            if (PortState == true)
+            {
+                throw new Exception(portName + "已处于打开状态");
+            }
             try
             {
                 sp.PortName = portName;
@@ -79,7 +83,6 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             }
             catch (Exception e)
             {
-
                 throw e;
             }
         }
@@ -194,6 +197,32 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
                 }
             }
             return returnStr;
+        }
+
+        public static string[] GetComPorts()
+        {
+           var portArr = SerialPort.GetPortNames();
+            return portArr;
+        }
+        /// <summary>
+        /// 端口是否已连接
+        /// </summary>
+        /// <param name="portName">端口号</param>
+        /// <returns></returns>
+        public static bool IsPortConnected(string portName)
+        {
+            var portArr = SerialPort.GetPortNames();
+            if (portArr.Length == 0)
+                return false;
+            foreach (var item in portArr)
+            {
+                if (item.Equals(portName))
+                {
+                    return true;
+                }
+            }
+            
+            return false;
         }
 
     }

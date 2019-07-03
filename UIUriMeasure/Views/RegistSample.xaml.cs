@@ -36,6 +36,7 @@ namespace UIUriMeasure.Views
         public ObservableCollection<SampleItem> GridData { get; internal set; }
 
         public DelegateCommand SelectAllDelegateCommand { get; private set; }
+       
 
         public RegistSample()
         {
@@ -135,6 +136,7 @@ namespace UIUriMeasure.Views
                         GridData.RemoveAt(i);
                     }
                 }
+                Medicside.UriMeasure.Bussiness.Recognition.BitmapReader.TestImageParser();
 
             }
 

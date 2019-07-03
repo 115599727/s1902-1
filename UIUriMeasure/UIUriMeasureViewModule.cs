@@ -26,6 +26,7 @@ namespace UIUriMeasure
 
             containerRegistry.RegisterForNavigation<RegistSample>();
             containerRegistry.RegisterForNavigation<MeasureResult>();
+            containerRegistry.RegisterForNavigation<MeasureResultEdit>();
         }
     }
 }

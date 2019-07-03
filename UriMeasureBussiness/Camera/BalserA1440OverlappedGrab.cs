@@ -12,15 +12,27 @@ namespace Medicside.UriMeasure.Bussiness.Camera
     public class BalserA1440OverlappedGrab : IGrabImage
     {
 
-        const uint NUM_GRABS = 2008;          /* Number of images to grab. */
+        uint NUM_GRABS = 2008;          /* Number of images to grab. */
         const uint NUM_BUFFERS = 5;         /* Number of buffers used for grabbing. */
-        List<ShotImage> ResultList = new List<ShotImage>(Convert.ToInt32(NUM_GRABS));
+        static List<ShotImage> ResultList ;
         private string SettingFile;
+        private string CameraName;
+        
 
-        public BalserA1440OverlappedGrab(string settingfile)
+        public int SetNUM_GRABS
+        {
+            set {
+                
+                NUM_GRABS = Convert.ToUInt32(value);
+            }
+        }
+        public BalserA1440OverlappedGrab(string settingfile,string cameraName)
         {
             //SettingFile = "c:\\acA1440-220um_40021038.pfs";
             this.SettingFile = settingfile;
+            this.CameraName = cameraName;
+            
+
         }
         public List<ShotImage> ResultImageList
         {
@@ -59,11 +71,12 @@ namespace Medicside.UriMeasure.Bussiness.Camera
 
                 if (0 == numDevices)
                 {
-                    throw new Exception("No devices found.");
+                    throw new Exception("No Balser  devices found.");
                 }
 
+
                 /* Get a handle for the first device found.  */
-                hDev = Pylon.CreateDeviceByIndex(0);
+                hDev = Pylon.CreateDeviceByIndex(GetCamraIndex());
 
                 /* ... Close and release the pylon device. */
                 if (Pylon.DeviceIsOpen(hDev))
@@ -188,8 +201,6 @@ namespace Medicside.UriMeasure.Bussiness.Camera
                 buffers = new Dictionary<PYLON_STREAMBUFFER_HANDLE, PylonBuffer<Byte>>();
 
 
-
-
                 for (i = 0; i < NUM_BUFFERS; ++i)
                 {
                     PylonBuffer<Byte> buffer = new PylonBuffer<byte>(payloadSize, true);
@@ -208,9 +219,6 @@ namespace Medicside.UriMeasure.Bussiness.Camera
                 }
 
 
-
-
-
                 /* The stream grabber is now prepared. As soon the camera starts acquiring images,
                    the image data will be grabbed into the provided buffers.  */
 
@@ -219,6 +227,7 @@ namespace Medicside.UriMeasure.Bussiness.Camera
 
                 /* Grab NUM_GRABS images */
                 nGrabs = 0;                         /* Counts the number of grabbed images. */
+                ResultList = new List<ShotImage>(Convert.ToInt32(NUM_BUFFERS));
                 while (nGrabs < NUM_GRABS)
                 {
                     int bufferIndex;                /* Index of the buffer. */
@@ -372,7 +381,7 @@ namespace Medicside.UriMeasure.Bussiness.Camera
                 }
 
                 Pylon.Terminate();  /* Releases all pylon resources. */
-                Console.WriteLine(ResultList.Count);
+                
                 throw e;
                 //Console.Error.WriteLine("\nPress enter to exit.0");
                 //Console.Error.WriteLine(ResultList.Capacity + "/" + ResultList.Count);
@@ -416,6 +425,96 @@ namespace Medicside.UriMeasure.Bussiness.Camera
                 if (val < min)
                     min = val;
             }
+        }
+        /// <summary>
+        /// 相机已连接操作
+        /// </summary>
+        /// <returns></returns>
+        public bool IsCameraConnected()
+        {
+
+            uint cindex = GetCamraIndex();
+             if(cindex >= 0)
+                return true;
+            else
+                return false;
+
+        }
+
+        uint GetCamraIndex()
+        {
+            foreach (var item in DeviceEnumerator.EnumerateDevices())
+            {
+                if (item.Name.Equals(this.CameraName))
+                {
+                    return item.Index;
+                }
+            }
+
+            throw new Exception(this.CameraName + "不存在，请检测相机连接线缆。");
+        }
+
+    }
+    /// <summary>
+    /// 相机枚举
+    /// </summary>
+    public static class DeviceEnumerator
+    {
+        /* Data class used for holding device data. */
+        public class Device
+        {
+            public string Name; /* The friendly name of the device. */
+            public string FullName; /* The full name string which is unique. */
+            public uint Index; /* The index of the device. */
+            public string Tooltip; /* The displayed tooltip */
+
+        }
+
+        /* Queries the number of available devices and creates a list with device data. */
+        public static List<Device> EnumerateDevices()
+        {
+            Pylon.Initialize();
+            /* Create a list for the device data. */
+            List<Device> list = new List<Device>();
+
+            /* Enumerate all camera devices. You must call
+            PylonEnumerateDevices() before creating a device. */
+            uint count = Pylon.EnumerateDevices();
+
+            /* Get device data from all devices. */
+            for (uint i = 0; i < count; ++i)
+            {
+                /* Create a new data packet. */
+                Device device = new Device();
+                /* Get the device info handle of the device. */
+                PYLON_DEVICE_INFO_HANDLE hDi = Pylon.GetDeviceInfoHandle(i);
+                /* Get the name. */
+                device.Name = Pylon.DeviceInfoGetPropertyValueByName(hDi, Pylon.cPylonDeviceInfoFriendlyNameKey);
+                /* Get the serial number */
+                device.FullName = Pylon.DeviceInfoGetPropertyValueByName(hDi, Pylon.cPylonDeviceInfoFullNameKey);
+                /* Set the index. */
+                device.Index = i;
+
+                /* Create tooltip */
+                string tooltip = "";
+                uint propertyCount = Pylon.DeviceInfoGetNumProperties(hDi);
+
+                if (propertyCount > 0)
+                {
+                    for (uint j = 0; j < propertyCount; j++)
+                    {
+                        tooltip += Pylon.DeviceInfoGetPropertyName(hDi, j) + ": " + Pylon.DeviceInfoGetPropertyValueByIndex(hDi, j);
+                        if (j != propertyCount - 1)
+                        {
+                            tooltip += "\n";
+                        }
+                    }
+                }
+                device.Tooltip = tooltip;
+                /* Add to the list. */
+                list.Add(device);
+            }
+            return list;
         }
     }
 }

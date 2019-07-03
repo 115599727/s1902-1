@@ -25,3 +25,4 @@ D:\S1902软件项目\Develop\github\UriMeasureBussinessTests\obj\Debug\UriMeasur
 D:\S1902软件项目\Develop\github\UriMeasureBussinessTests\obj\Debug\UriMeasureBussinessTests.csproj.CopyComplete
 D:\S1902软件项目\Develop\github\UriMeasureBussinessTests\obj\Debug\UriMeasureBussinessTests.dll
 D:\S1902软件项目\Develop\github\UriMeasureBussinessTests\obj\Debug\UriMeasureBussinessTests.pdb
+D:\S1902软件项目\Develop\github\UriMeasureBussinessTests\bin\Debug\Recognition\clyrtnER.dll

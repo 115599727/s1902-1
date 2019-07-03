@@ -2,8 +2,10 @@
 using Medicside.UriMeasure.Bussiness.Interface;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,21 +14,25 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
     /// <summary>
     /// 形态学检测仪器
     /// </summary>
-   public class MorphologyEquipment : Equipment,IMorphplogyMeasure
+    public class MorphologyEquipment : Equipment, IMorphplogyMeasure
     {
+        MorphologyEquipmentCommandBuilder MECommandBuilder;
 
-
+        static int PortTimeOut = 5000;
         public MorphologyEquipment()
         {
             this.Port232 = new PortRS232();
-            Port232.PortName = "COM3";
+            Port232.PortName = "COM1";
             Port232.StopBites = 1;
             Port232.DataBits = 8;
             Port232.BaudRate = "115200";
             this.PortNet = new PortNetWork();
             pcHelper = new PortControlHelper(PortControlHelper.TransDataType.BytesData);
-           
+            balser = new BalserA1440OverlappedGrab("c:\\acA1440-220um_40021038.pfs", "Basler acA1440-220um (40021038)");
+            MECommandBuilder = new MorphologyEquipmentCommandBuilder();
+            pcHelper.OnComReceiveBytesHandler += new PortControlHelper.ComReceiveBytesHandler(ReceiveData);
         }
+        IGrabImage balser;
         /// <summary>
         /// 串口设备端口
         /// </summary>
@@ -41,8 +47,8 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         /// </summary>
         public PortNetWork PortNet
         {
-                get;
-                set;
+            get;
+            set;
         }
 
 
@@ -96,7 +102,6 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         {
             try
             {
-                IGrabImage balser = new BalserA1440OverlappedGrab("c:\\acA1440-220um_40021038.pfs");
 
                 Thread th1 = new Thread(balser.GrabImage);
                 th1.Priority = ThreadPriority.Highest;
@@ -115,7 +120,9 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             }
             return null;
         }
-       public void SendShot()
+
+
+        public void SendShot()
         {
             Thread.Sleep(1000);
             this.SendCommand(MEquCommandName.Shot);
@@ -129,15 +136,16 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         static Dictionary<MEquCommandName, string> CommandText = new Dictionary<MEquCommandName, string>()
         {
             { MEquCommandName.Shot,"02 30 38 31 38 30 30 30 34 30 30 43 38 30 37 44 38 41 39 44 39 0D 0A" },
-            {MEquCommandName.Reset,"02 30 32 30 32 30 30 30 32 30 30 30 30 43 31 34 30 0D 0A" }
+            { MEquCommandName.Reset,"02 30 32 30 32 30 30 30 32 30 30 30 30 43 31 34 30 0D 0A" }
         };
         public enum MEquCommandName
         {
             Reset, Shot
         }
+        public List<byte> ReceivedByteData = new List<byte>();
         private void ReceiveData(byte[] data)
         {
-            //throw new NotImplementedException();
+            ReceivedByteData.AddRange(data);
         }
 
         /// <summary>
@@ -152,7 +160,7 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
                 pcHelper.ClosePort();
                 //Thread.Sleep(10);
                 //打开端口
-                pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites,5000);
+                pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
             }
 
 
@@ -183,6 +191,256 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
 
         }
 
+        //相机连接测试操作
+        public bool CameraConnctionTest()
+        {
+            return balser.IsCameraConnected();
+        }
+
+
+        public bool EquipmentReset()
+        {
+            if (CameraConnctionTest() != true)
+            {
+                return false;
+            }
+
+            if (EquipmentPortIsConnected() != true)
+            {
+                return false;
+            }
+            return true;
+        }
+        //仪器连接测试
+        public bool EquipmentPortIsConnected()
+        {
+
+            if (PortControlHelper.IsPortConnected(Port232.PortName) != true)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        //仪器调节灰度
+        public bool EquipmentAdjectGrayLeve()
+        {
+            int shotCount = 50;
+
+            balser.SetNUM_GRABS=shotCount;
+
+            Thread tgrab = new Thread(balser.GrabImage);
+            tgrab.Priority = ThreadPriority.Highest;
+            tgrab.Start();
+
+           // balser.GrabImage();
+
+         
+            //Thread.Sleep(10);
+            //打开端口
+            pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
+
+            byte[] CmdBytes = MECommandBuilder.GetShotCommand(200, shotCount);
+            ReceivedByteData = new List<byte>();
+            pcHelper.SendBytesData(CmdBytes);
+            Thread.Sleep(4000);
+            
+
+            Dictionary<string, EquResult> result = null;
+            CheckResult(ref result);
+            pcHelper.ClosePort();
+            if (result[MorphologyEquipmentCommandBuilder.CMDCallBack_FinishNoneValue] == null)
+            {
+                return false;
+            }
+            int n = balser.ResultImageList.Count;
+
+
+
+            {
+                return true;
+            }
+
+
+            
+        }
+
+        string GetReceivedData()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in ReceivedByteData)
+            {
+                sb.Append(item + " ");
+            }
+            return sb.ToString();
+        }
+
+        public bool CheckResult()
+        {
+            //string s = "2 48 56 49 56 48 48 48 56 65 65 66 66 48 48 48 48 48 48 48 48 48 48 48 48 69 49 69 67 13 10 2 48 56 49 56 48 48 48 56 48 48 48 48 48 48 48 48 48 48 48 48 48 48 48 48 52 70 50 50 13 10 ";
+            string result= GetReceivedData();
+            Regex r = new Regex(@"([2][ ](\d\d\s)*[1][3][\s][1][0][\s])");
+            var t = r.Matches(result);
+
+            //foreach (Match match in t)
+            //{
+            //    Console.WriteLine(match.Value);
+            //}
+
+            if (t.Count == 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+        public bool CheckResult(ref Dictionary<string,EquResult> resultList)
+        {
+            resultList = new Dictionary<string,EquResult>();
+            //string s = "2 48 56 49 56 48 48 48 56 65 65 66 66 48 48 48 48 48 48 48 48 48 48 48 48 69 49 69 67 13 10 2 48 56 49 56 48 48 48 56 48 48 48 48 48 48 48 48 48 48 48 48 48 48 48 48 52 70 50 50 13 10 ";
+            string result = GetReceivedData();
+            Regex r = new Regex(@"([2][ ](\d\d\s)*[1][3][\s][1][0][\s])");
+            var t = r.Matches(result);
+
+            foreach (Match match in t)
+            {
+                var s1 = match.Value.Replace(" ", "");
+                var s2 = s1.Substring(1, s1.IndexOf("1310") - 1 - 4 - 4);
+
+                List<char> chars = new List<char>();
+                StringBuilder sb = new StringBuilder();
+                for (int i = 0; i < s2.ToCharArray().Length; i = i + 2)
+                {
+                    chars.Add((char)int.Parse(s2.Substring(i, 2)));
+                    sb.Append((char)int.Parse(s2.Substring(i, 2)));
+                }
+                string Body = sb.ToString();
+                EquResult er = new EquResult();
+                er.Command = Body.Substring(0, 4);
+                er.dataLength = Body.Substring(4, 4);
+                er.dataFlag = Body.Substring(8, 8);
+                er.data = Body.Substring(16);
+
+                resultList.Add(er.dataFlag,er);
+            }
+
+            if (t.Count == 2)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
+        public int FlashGetVol()
+        {
+            
+            //Thread.Sleep(10);
+            //打开端口
+            pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
+
+            byte[] CmdBytes = MECommandBuilder.FlashGetVoltage();
+            ReceivedByteData = new List<byte>();
+            pcHelper.SendBytesData(CmdBytes);
+            Thread.Sleep(100);
+            pcHelper.ClosePort();
+            Dictionary<string,EquResult> result=null;
+            CheckResult(ref result);
+            int a = MorphologyEquipmentCommandBuilder.Conver16DataStringToInt(result[MorphologyEquipmentCommandBuilder.CMDCallBack_FinishGetValue].data);
+            return a;
+        }
+
+        public bool FlashAddVol(int val)
+        {
+            pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
+
+            byte[] CmdBytes = MECommandBuilder.FlashAddVoltage(val);
+            ReceivedByteData = new List<byte>();
+            pcHelper.SendBytesData(CmdBytes);
+            Thread.Sleep(100);
+            pcHelper.ClosePort();
+            Dictionary<string, EquResult> result = null;
+            CheckResult(ref result);
+            if (result[MorphologyEquipmentCommandBuilder.CMDCallBack_FinishNoneValue] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        /// <summary>
+        /// 降低闪光灯电压
+        /// </summary>
+        /// <param name="val"></param>
+        /// <returns></returns>
+        public bool FlashDecVol(int val)
+        {
+            pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
+
+            byte[] CmdBytes = MECommandBuilder.FlashDecVoltage(val);
+            ReceivedByteData = new List<byte>();
+            pcHelper.SendBytesData(CmdBytes);
+            Thread.Sleep(100);
+            pcHelper.ClosePort();
+            Dictionary<string, EquResult> result = null;
+            CheckResult(ref result);
+            if (result[MorphologyEquipmentCommandBuilder.CMDCallBack_FinishNoneValue] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
+        public bool FlashSetVol(int val)
+        {
+            pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
+
+            byte[] CmdBytes = MECommandBuilder.FlashSetVoltage(val);
+            ReceivedByteData = new List<byte>();
+            pcHelper.SendBytesData(CmdBytes);
+            Thread.Sleep(100);
+            pcHelper.ClosePort();
+            Dictionary<string, EquResult> result = null;
+            CheckResult(ref result);
+            if (result[MorphologyEquipmentCommandBuilder.CMDCallBack_FinishNoneValue] == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+        /// <summary>
+        /// 设备串口返回结果
+        /// </summary>
+        public class EquResult
+        {
+            public string Command;
+            public string dataLength;
+            public string dataFlag;
+            public string data;
+
+        }
     }
 
 }

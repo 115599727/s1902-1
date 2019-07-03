@@ -31,6 +31,8 @@ namespace Medicside.UriMeasure.DataAccess.DataHelper
                 result.TestType = "干化学+形态学";
                 result.DilutionMultiples = 8;
                 result.ReviewDilutionMultiples = 16;
+                result.MphResult = GetUrineTestResultItems().Where(p=>p.TestType.Equals("形态学检测类")).ToList<UrineTestResultItem>();
+                result.ChmResult= GetUrineTestResultItems().Where(p => p.TestType.Equals("干化学检测类")).ToList<UrineTestResultItem>();
                 list.Add(result);
             }
 
