@@ -22,6 +22,8 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         static String FlashSetVolCMD = "0810";
         static String FlashAddVolCMD = "0821";
         static String FlashDecVolCMD = "0822";//减少电压
+        static String EquResetCMD="0202";
+        static String BlankMeasureCMD = "0221";
         public byte[] GetShotCommand()
         {
 
@@ -227,6 +229,46 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             String strbody = sbCmdbody.ToString().ToUpper();
 
             return BuildCommand(strbody).ToArray();
+        }
+
+
+        public byte[] EquReset()
+        {
+            StringBuilder sbCmdbody = new StringBuilder();
+            //命令码 0x0202
+            var command = EquResetCMD;
+            sbCmdbody.Append(command);
+            //数据包
+            int DataLength = 2;
+            sbCmdbody.Append(Conver16DataString(DataLength, 2));
+            int data0 = 0;
+            sbCmdbody.Append(Conver16DataString(data0, 2));
+            ////int data1 = 2000;
+            ////sbCmdbody.Append(Conver16DataString(data1, 2));
+
+            String strbody = sbCmdbody.ToString().ToUpper();
+
+            return BuildCommand(strbody).ToArray();
+
+        }
+        public byte[] BlankMeasure()
+        {
+            StringBuilder sbCmdbody = new StringBuilder();
+            //命令码 0x0202
+            var command = BlankMeasureCMD;
+            sbCmdbody.Append(command);
+            //数据包
+            int DataLength = 0;
+            sbCmdbody.Append(Conver16DataString(DataLength, 2));
+            //int data0 = 0;
+            //sbCmdbody.Append(Conver16DataString(data0, 2));
+            ////int data1 = 2000;
+            ////sbCmdbody.Append(Conver16DataString(data1, 2));
+
+            String strbody = sbCmdbody.ToString().ToUpper();
+
+            return BuildCommand(strbody).ToArray();
+
         }
     }
 }

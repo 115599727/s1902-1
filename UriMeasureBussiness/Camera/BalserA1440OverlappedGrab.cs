@@ -32,7 +32,6 @@ namespace Medicside.UriMeasure.Bussiness.Camera
             this.SettingFile = settingfile;
             this.CameraName = cameraName;
             
-
         }
         public List<ShotImage> ResultImageList
         {
@@ -233,12 +232,12 @@ namespace Medicside.UriMeasure.Bussiness.Camera
                     int bufferIndex;                /* Index of the buffer. */
                     Byte min, max;
                     /* Wait for the next buffer to be filled. Wait up to 1000 ms. */
-                    isReady = Pylon.WaitObjectWait(hWait, 10000);
+                    isReady = Pylon.WaitObjectWait(hWait, 50*1000);
 
                     if (!isReady)
                     {
                         /* Timeout occurred. */
-                        Console.WriteLine("Ready false");
+                        Console.WriteLine("Camera Ready false");
                         throw new Exception("Grab timeout occurred.");
                     }
 
@@ -255,7 +254,7 @@ namespace Medicside.UriMeasure.Bussiness.Camera
                     }
 
                     nGrabs++;
-                    Console.WriteLine(nGrabs);
+                    //Console.WriteLine(nGrabs);
                     /* Get the buffer index from the context information. */
                     bufferIndex = (int)grabResult.Context;
 
@@ -341,7 +340,7 @@ namespace Medicside.UriMeasure.Bussiness.Camera
                 Pylon.DeviceClose(hDev);
                 Pylon.DestroyDevice(hDev);
                 //SaveImage();
-                Console.Error.WriteLine(ResultList.Capacity + "/" + ResultList.Count);
+                Console.WriteLine(ResultList.Capacity + "/" + ResultList.Count);
                 //Console.Error.WriteLine("\nPress enter to exit.1");
                 //Console.ReadLine();
 

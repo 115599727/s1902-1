@@ -136,7 +136,7 @@ namespace UIUriMeasure.Views
                         GridData.RemoveAt(i);
                     }
                 }
-                Medicside.UriMeasure.Bussiness.Recognition.BitmapReader.TestImageParser();
+              //  Medicside.UriMeasure.Bussiness.Recognition.BitmapReader.TestImageParser();
 
             }
 

@@ -105,4 +105,3 @@ D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MorphologyPicCe
 D:\S1902软件项目\Develop\github\UIUriMeasure\obj\Debug\Views\MorphologyPicLargePic.baml
 D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\PylonC.NET.dll
 D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\PylonC.NET.xml
-D:\S1902软件项目\Develop\github\UIUriMeasure\bin\Debug\Recognition\clyrtnER.dll

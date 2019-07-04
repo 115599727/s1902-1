@@ -11,9 +11,14 @@ namespace Medicside.UriMeasure.Bussiness.Recognition
 {
   public  class BitmapReader
     {
-        [DllImport("clyrtnER.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+      [DllImport("clyrtnER.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         ///获取识别的细胞小图
-        extern static void imageParser([MarshalAs(UnmanagedType.LPArray)] byte[] pImgBits, int nImgWidth, int nImgHeight, IntPtr PtlPtr);
+      public  extern static void imageParser([MarshalAs(UnmanagedType.LPArray)] byte[] pImgBits, int nImgWidth, int nImgHeight, IntPtr PtlPtr);
+
+      [DllImport("clyrtnF.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        // 灰度调整接口：
+        //extern "C" __declspec(dllexport) void graylevelAdjust(unsigned char* pImgBits, int nImgWidth, int nImgHeight, int len, double* result);
+      extern static void graylevelAdjust([MarshalAs(UnmanagedType.LPArray)] byte[] pImgBits, int nImgWidth, int nImgHeight, int len, [MarshalAs(UnmanagedType.LPArray, SizeParamIndex = 1)] double[] result);
 
 
         [StructLayout(LayoutKind.Sequential)]
@@ -31,51 +36,7 @@ namespace Medicside.UriMeasure.Bussiness.Recognition
         }
 
 
-        public static void TestImageParser()
-        {
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            long tick = DateTime.Now.Ticks;
-            Bitmap bmap = new Bitmap(@"D:\分类算法库 V1.0.0.1\sample\0062.bmp");
-            MemoryStream ms = new MemoryStream();
-
-            bmap.Save(ms, System.Drawing.Imaging.ImageFormat.Bmp);
-
-            byte[] bytes = ms.ToArray();  //byte[]   bytes=   ms.ToArray(); 这两句都可以，至于区别么，下面有解释
-
-            ms.Close();
-            //Console.WriteLine(bytes.Length.ToString());
-
-            //Console.WriteLine(bytes.Length);
-            byte[] Bmpdata = new byte[bytes.Length - 1078];
-            for (int i = 0; i < 1555200; i++)
-            {
-                Bmpdata[i] = bytes[1078 + i];
-            }
-            //bytes.CopyTo(Bmpdata,1079);
-            //Mdata = Bmpdata;
-            int size = Marshal.SizeOf(typeof(CellImage)) * 4000;
-            byte[] ptlbytes = new byte[size];
-
-            IntPtr pBuff = Marshal.AllocHGlobal(size);
-
-            int result = 9;
-            imageParser(Bmpdata, 1440, 1080, pBuff);
-
-            int j = 3999;
-
-            IntPtr pPonitor = new IntPtr(pBuff.ToInt64() + Marshal.SizeOf(typeof(CellImage)) * j);
-            var p0 = (CellImage)Marshal.PtrToStructure(pPonitor, typeof(CellImage));
-
-            Console.WriteLine(p0.width + "||" + p0.height);
-
-            Console.WriteLine(result);
-            Marshal.FreeHGlobal(pBuff);
-            Console.WriteLine("OK END");
-            tick = DateTime.Now.Ticks - tick;
-            Console.WriteLine(DateTime.Now.ToLongTimeString());
-            Console.WriteLine(tick / 10000000.0);
-
-        }
+       
 
         public List<CellImage> GetCellsBitmap(Byte[] OrginBitmap, int width, int height)
         {
@@ -111,6 +72,28 @@ namespace Medicside.UriMeasure.Bussiness.Recognition
 
         }
 
+        /// <summary>
+        /// 灰度调节
+        /// </summary>
+        /// <param name="bitmaps"></param>
+        /// <param name="imgWidth"></param>
+        /// <param name="imgHeight"></param>
+        /// <param name="imgCount"></param>
+        /// <param name="r0">图像灰度平均值</param>
+        /// <param name="r1">灰度调整步数。小于零时往亮处调整，大于零时往暗处调整。</param>
+        public static void GrayLevelAdjest(Byte[] bitmaps,int imgWidth,int imgHeight,int imgCount,ref double r0,ref double r1)
+        {
+
+
+            double[] resultdata = new double[2];
+
+
+            graylevelAdjust(bitmaps, 1440, 1080, imgCount, resultdata);
+
+
+            r0 = resultdata[0];
+            r1 = resultdata[1];
+        }
     }
 }
 

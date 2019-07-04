@@ -125,4 +125,3 @@ D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\UriMeasureDataAccess.
 D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\UriMeasureDataAccess.pdb
 D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\PylonC.NET.dll
 D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\PylonC.NET.xml
-D:\S1902软件项目\Develop\github\UITestModule\bin\Debug\Recognition\clyrtnER.dll

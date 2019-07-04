@@ -47,8 +47,18 @@ namespace Medicside.UriMeasure.Bussiness.Equipment.Tests
         [TestMethod()]
         public void EquipmentAdjectGrayLeveTest()
         {
+
             MorphologyEquipment me = new MorphologyEquipment();
-            Assert.IsTrue(me.EquipmentAdjectGrayLeve());
+            for (int i = 0; i < 10; i++)
+            {
+                me.EquipmentAdjectGrayLeve();
+                Thread.Sleep(1000);
+            }
+
+
+            Assert.IsTrue(true);
+
+
         }
         MorphologyEquipment me = new MorphologyEquipment();
         [TestMethod()]
@@ -83,7 +93,28 @@ namespace Medicside.UriMeasure.Bussiness.Equipment.Tests
         [TestMethod()]
         public void FlashSetVolTest()
         {
-            bool r = me.FlashSetVol(2222);
+            bool r = me.FlashSetVol(1706);
+            Assert.IsTrue(r);
+        }
+
+        [TestMethod()]
+        public void EquResetTest()
+        {
+            var r = me.EquReset();
+            Assert.IsTrue(r);
+        }
+
+        [TestMethod()]
+        public void EquipmentSetupTest()
+        {
+            var r = me.EquipmentSetup();
+            Assert.IsTrue(r);
+        }
+
+        [TestMethod()]
+        public void EquipmentblankMeasureTest()
+        {
+            var r = me.EquipmentblankMeasure();
             Assert.IsTrue(r);
         }
     }

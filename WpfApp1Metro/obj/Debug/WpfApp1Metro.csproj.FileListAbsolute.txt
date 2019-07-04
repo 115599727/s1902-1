@@ -237,4 +237,3 @@ D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\C1.WPF.DateTimeEditor
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\C1.WPF.DateTimeEditors.4.xml
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\PylonC.NET.dll
 D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\PylonC.NET.xml
-D:\S1902软件项目\Develop\github\WpfApp1Metro\bin\Debug\Recognition\clyrtnER.dll

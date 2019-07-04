@@ -1,5 +1,6 @@
 ﻿using Medicside.UriMeasure.Bussiness.Camera;
 using Medicside.UriMeasure.Bussiness.Interface;
+using Medicside.UriMeasure.Bussiness.Recognition;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -19,6 +20,8 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         MorphologyEquipmentCommandBuilder MECommandBuilder;
 
         static int PortTimeOut = 5000;
+        int shotImageWidthpx = 1440;
+        int shotImageHeightpx = 1080;
         public MorphologyEquipment()
         {
             this.Port232 = new PortRS232();
@@ -66,14 +69,8 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             return 0;
         }
 
-        /// <summary>
-        /// 空白测试
-        /// </summary>
-        /// <returns></returns>
-        public int BlankTest()
-        {
-            return 0;
-        }
+        
+       
 
         /// <summary>
         /// 校准
@@ -112,6 +109,7 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
                 th.Priority = ThreadPriority.Normal;
                 th.Start();
 
+                th1.Join();
             }
             catch (Exception ex)
             {
@@ -163,8 +161,6 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
                 pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
             }
 
-
-
             byte[] CmdBytes = GetShotCommand(commandName);
 
             pcHelper.SendBytesData(CmdBytes);
@@ -197,15 +193,24 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             return balser.IsCameraConnected();
         }
 
-
-        public bool EquipmentReset()
+        /// <summary>
+        /// 仪器的初始化检查
+        /// </summary>
+        /// <returns></returns>
+        public bool EquipmentSetup()
         {
+            //镜头连接
             if (CameraConnctionTest() != true)
             {
                 return false;
             }
-
+            //仪器端口通讯连接
             if (EquipmentPortIsConnected() != true)
+            {
+                return false;
+            }
+            //仪器复位
+            if(EquReset()!=true)
             {
                 return false;
             }
@@ -230,25 +235,27 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         public bool EquipmentAdjectGrayLeve()
         {
             int shotCount = 50;
+            double grayValue = 0;
+            double graySteps = 0;
 
-            balser.SetNUM_GRABS=shotCount;
+            //  do
+            //   {
+
+            balser.SetNUM_GRABS = shotCount;
 
             Thread tgrab = new Thread(balser.GrabImage);
             tgrab.Priority = ThreadPriority.Highest;
             tgrab.Start();
 
-           // balser.GrabImage();
+            Thread.Sleep(800);
 
-         
-            //Thread.Sleep(10);
-            //打开端口
             pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
 
             byte[] CmdBytes = MECommandBuilder.GetShotCommand(200, shotCount);
             ReceivedByteData = new List<byte>();
             pcHelper.SendBytesData(CmdBytes);
-            Thread.Sleep(4000);
-            
+
+            tgrab.Join();
 
             Dictionary<string, EquResult> result = null;
             CheckResult(ref result);
@@ -258,15 +265,84 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
                 return false;
             }
             int n = balser.ResultImageList.Count;
+            if(n!=shotCount)
+            { return false; }
+            int size = shotImageWidthpx * shotImageHeightpx;
+            byte[] picData = new byte[size * shotCount];
+            for (int i = 0; i < balser.ResultImageList.Count; i++)
+            {
+                Array.Copy(balser.ResultImageList[i].Buffer, 0, picData, i * size, size);
+            }
 
+            BitmapReader.GrayLevelAdjest(picData, shotImageWidthpx, shotImageHeightpx, n, ref grayValue, ref graySteps);
+            balser.ResultImageList.Clear();
+            int curFlashVol = FlashGetVol();
 
+            Console.WriteLine("{0}     {1}", graySteps, curFlashVol);
+            int setp = 0;
+            if (int.TryParse(graySteps.ToString(), out setp))
+            {
+                if (graySteps > 0)
+                {
+                    FlashDecVol(Math.Abs(42));
+                }
+                else
+                {
+                    FlashAddVol(Math.Abs(42));
+                }
+            }
+           
+            // } while (graySteps==0);
 
             {
                 return true;
             }
 
 
+
+        }
+
+        /// <summary>
+        /// 空白测试
+        /// </summary>
+        /// <returns></returns>
+        public bool EquipmentblankMeasure()
+        {
+
+            int shotCount = 2000;
+            double grayValue = 0;
+            double graySteps = 0;
+
             
+
+            
+
+            
+
+            pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
+
+            byte[] CmdBytes = MECommandBuilder.BlankMeasure();
+            ReceivedByteData = new List<byte>();
+            pcHelper.SendBytesData(CmdBytes);
+            //Thread.Sleep(18000);
+            balser.SetNUM_GRABS = shotCount;
+            Thread tgrab = new Thread(balser.GrabImage);
+            tgrab.Priority = ThreadPriority.Highest;
+            tgrab.Start();
+
+            tgrab.Join();
+
+            Dictionary<string, EquResult> result = null;
+            CheckResult(ref result);
+            pcHelper.ClosePort();
+            if (result[MorphologyEquipmentCommandBuilder.CMDCallBack_FinishNoneValue] == null)
+            {
+                return false;
+            }
+            int n = balser.ResultImageList.Count;
+            if (n != shotCount)
+            { return false; }
+            return true;
         }
 
         string GetReceivedData()
@@ -282,7 +358,7 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
         public bool CheckResult()
         {
             //string s = "2 48 56 49 56 48 48 48 56 65 65 66 66 48 48 48 48 48 48 48 48 48 48 48 48 69 49 69 67 13 10 2 48 56 49 56 48 48 48 56 48 48 48 48 48 48 48 48 48 48 48 48 48 48 48 48 52 70 50 50 13 10 ";
-            string result= GetReceivedData();
+            string result = GetReceivedData();
             Regex r = new Regex(@"([2][ ](\d\d\s)*[1][3][\s][1][0][\s])");
             var t = r.Matches(result);
 
@@ -299,11 +375,11 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             {
                 return false;
             }
-            
+
         }
-        public bool CheckResult(ref Dictionary<string,EquResult> resultList)
+        public bool CheckResult(ref Dictionary<string, EquResult> resultList)
         {
-            resultList = new Dictionary<string,EquResult>();
+            resultList = new Dictionary<string, EquResult>();
             //string s = "2 48 56 49 56 48 48 48 56 65 65 66 66 48 48 48 48 48 48 48 48 48 48 48 48 69 49 69 67 13 10 2 48 56 49 56 48 48 48 56 48 48 48 48 48 48 48 48 48 48 48 48 48 48 48 48 52 70 50 50 13 10 ";
             string result = GetReceivedData();
             Regex r = new Regex(@"([2][ ](\d\d\s)*[1][3][\s][1][0][\s])");
@@ -328,7 +404,7 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
                 er.dataFlag = Body.Substring(8, 8);
                 er.data = Body.Substring(16);
 
-                resultList.Add(er.dataFlag,er);
+                resultList.Add(er.dataFlag, er);
             }
 
             if (t.Count == 2)
@@ -345,7 +421,7 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
 
         public int FlashGetVol()
         {
-            
+
             //Thread.Sleep(10);
             //打开端口
             pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
@@ -355,7 +431,7 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             pcHelper.SendBytesData(CmdBytes);
             Thread.Sleep(100);
             pcHelper.ClosePort();
-            Dictionary<string,EquResult> result=null;
+            Dictionary<string, EquResult> result = null;
             CheckResult(ref result);
             int a = MorphologyEquipmentCommandBuilder.Conver16DataStringToInt(result[MorphologyEquipmentCommandBuilder.CMDCallBack_FinishGetValue].data);
             return a;
@@ -430,6 +506,26 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             }
 
         }
+
+
+        public bool EquReset()
+        {
+
+            //Thread.Sleep(10);
+            //打开端口
+            pcHelper.OpenPort(Port232.PortName, int.Parse(Port232.BaudRate), Port232.DataBits, Port232.StopBites, PortTimeOut);
+
+            byte[] CmdBytes = MECommandBuilder.EquReset();
+            ReceivedByteData = new List<byte>();
+            pcHelper.SendBytesData(CmdBytes);
+            Thread.Sleep(36000);
+            pcHelper.ClosePort();
+            Dictionary<string, EquResult> result = null;
+            CheckResult(ref result);
+            if(result[MorphologyEquipmentCommandBuilder.CMDCallBack_FinishNoneValue]!=null)
+            { return true; }
+            return false;
+        }
         /// <summary>
         /// 设备串口返回结果
         /// </summary>
@@ -441,6 +537,8 @@ namespace Medicside.UriMeasure.Bussiness.Equipment
             public string data;
 
         }
+
+
     }
 
 }
